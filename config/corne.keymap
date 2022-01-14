@@ -2,31 +2,13 @@
  * Copyright (c) 2020 The ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
- * To use home rows - &hm LSHFT F
  */
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/outputs.h>
-
-#define QWERTY 0
-#define LOWER 1
-#define RAISE 2
-#define ADJUST 3
 
 / {
-
-    behaviors {
-        gresc: grave_escape {
-            compatible = "zmk,behavior-mod-morph";
-            label = "GRAVE_ESCAPE";
-            #binding-cells = <0>;
-            bindings = <&kp ESC>, <&kp GRAVE>;
-            mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
-        };
-    };
-
         keymap {
                 compatible = "zmk,keymap";
 
@@ -41,10 +23,10 @@
 //                               |  GUI   |  LSFT   |   ENT   |       |  SPC  |  RSHFT  |   GUI   |
 //                               '--------+---------+---------'       '-------+---------+---------'
                         bindings = <
-   &mt LCTRL TAB  &kp Q        &kp W        &kp E      &kp R              &kp T              &kp Y      &kp U         &kp I        &kp O        &kp P           &kp BSPC
-   &gresc         &kp A        &kp S        &kp D      &kp F              &kp G              &kp H      &kp J         &kp K        &kp L        &kp SEMI        &kp SQT
-   &kp LSHFT      &mt LCTRL Z  &mt LALT X   &kp C      &kp V              &kp B              &kp N      &kp M         &kp COMMA    &mt LALT DOT &mt LALT FSLH   &mt DEL
-                               &kp LGUI     &kp LSHFT  &lt LOWER RET      &lt RAISE SPACE    &kp RSHFT  &kp LGUI
+   &mt LCTRL TAB &kp Q       &kp W      &kp E    &kp R     &kp T       &kp Y       &kp U     &kp I     &kp O        &kp P         &kp BSPC
+   &mt ESC TAB   &kp A       &kp S      &kp D    &kp F     &kp G       &kp H       &kp J     &kp K     &kp L        &kp SEMI      &kp SQT
+   &kp LSHFT     &mt LCTRL Z &mt LALT X &kp C    &kp V     &kp B       &kp N       &kp M     &kp COMMA &mt RALT DOT &mt RALT FSLH &kp DEL
+                                        &kp LGUI &kp LSHFT &lt 1 RET   &lt 2 SPACE &kp RSHFT &kp RGUI
                         >;
                 };
 
@@ -52,7 +34,7 @@
 // .----------------------------------------------------------.       .---------------------------------------------------------------.
 // |          |   1   |    2   |   3    |     4    |     5    |       |    6   |     7   |     8   |    9    |     0    |             |
 // |----------+-------+--------+--------+----------+----------|       |--------+---------+---------+---------+----------+-------------|
-// |     ▶    |   🔇  |   🔊   |   🔈   |    ⏩    |   PGUP   |       |    ←   |    ↓    |    ↑    |    →    |          |             |
+// |     ▶    |   🔇  |   🔊   |   🔈   |    ⏩    |   PGUP   |       |    ⬆   |    ⬇    |    ⬅    |    ⮕   |          |             |
 // |----------+-------+--------+--------+----------+----------|       |--------+---------+---------+---------+----------+-------------|
 // |  OUT_TOG |  UNDO |  CUT   |  COPY  |  PASTE   |   PGDN   |       |  CAPS  |   INS   |         |         |          |   OUT_TOG   |
 // '---------------------------+--------+----------+----------+       |--------+---------+---------+----------------------------------'
@@ -60,10 +42,10 @@
 //                             '--------+----------+----------'       '--------+---------+---------'
 
                         bindings = <
-   &trans          &kp N1     &kp N2             &kp N3            &kp N4              &kp N5                  &kp N6               &kp N7                  &kp N8             &kp N9             &kp N0       &trans
-   &kp C_PLAY      &kp K_MUTE &kp K_VOL_DN       &kp K_VOL_UP      &kp K_NEXT          &kp PAGE_UP             &kp LEFT_ARROW       &kp DOWN_ARROW          &kp UP_ARROW       &kp RIGHT_ARROW    &trans       &trans
-   &out OUT_TOG    &kp K_UNDO &kp K_CUT          &kp K_COPY        &kp K_PASTE         &kp CAPSLOCK            &kp CAPSLOCK         &kp INSERT              &trans             &trans             &trans       &out OUT_TOG
-                              &trans             &trans            &mo ADJUST          &trans                  &trans               &trans
+   &trans       &kp N1     &kp N2       &kp N3       &kp N4      &kp N5      &kp N6   &kp N7     &kp N8 &kp N9    &kp N0 &trans
+   &kp C_PLAY   &kp K_MUTE &kp K_VOL_DN &kp K_VOL_UP &kp K_NEXT  &kp PG_UP   &kp LEFT &kp DOWN   &kp UP &kp RIGHT &trans &trans
+   &out OUT_TOG &kp K_UNDO &kp K_CUT    &kp K_COPY   &kp K_PASTE &kp PG_DN   &kp CAPS &kp INSERT &trans &trans    &trans &out OUT_TOG
+                                        &trans       &trans      &mo 3       &trans   &trans     &trans
                         >;
                 };
 
@@ -78,10 +60,10 @@
 //                               |        |         |   MO2   |       |  MO3  |         |         |
 //                               '--------+---------+---------'       '-------+---------+---------'
                         bindings = <
-   &kp ESC    &kp EXCL     &kp AT            &kp HASH    &kp DLLR     &kp PRCNT         &kp CARET      &kp AMPS        &kp KP_MULTIPLY     &kp LPAR      &kp RPAR       &trans
-   &trans     &kp UNDER    &kp PLUS          &kp EQUAL   &kp PIPE     &kp MINUS         &kp HOME       &kp PG_DN       &kp PG_UP           &kp END       &kp PSCRN      &kp GRAVE
-   &trans     &BSLH        &kp LT            &kp LBRC    &kp LPAR     &kp LBKT          &kp RBKT       &kp RPAR        &kp RBRC            &kp GT        &kp KP_SLASH   &trans
-                                             &trans      &trans       &mo LOWER         &mo ADJUST     &kp KP_N2       &kp KP_N3
+   &kp ESC &kp EXCL  &kp AT   &kp HASH  &kp DLLR &kp PRCNT     &kp CARET &kp AMPS   &kp ASTRK &kp LPAR &kp RPAR  &trans
+   &trans  &kp UNDER &kp PLUS &kp EQUAL &kp PIPE &kp MINUS     &kp HOME  &kp PG_DN  &kp PG_UP &kp END  &kp PSCRN &kp GRAVE
+   &trans  &kp BSLH  &kp LT   &kp LBRC  &kp LPAR &kp LBKT      &kp RBKT  &kp RPAR   &kp RBRC  &kp GT   &kp FSLH  &trans
+                              &trans    &trans   &mo 1         &mo 2     &trans     &trans
                         >;
                 };
 
@@ -95,12 +77,11 @@
 // '----------------------------+--------+---------+---------+       |--------+--------+---------+----------------------------------'
 //                              |        |         |  ADJUST |       | ADJUST |        |         |
 //                              '--------+---------+---------'       '--------+--------+---------'
-
                         bindings = <
-   &reset      &kp F1          &kp F2         &kp F3          &kp F4          &kp F5            &kp F6     &kp F7 &kp F8 &kp F9  &kp F10 &reset
-   &bt BT_CLR  &bt BT_SEL 0    &bt BT_SEL 1   &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4      &trans     &trans &trans &kp F11 &kp F12 &trans
-   &trans      &trans          &trans         &trans          &trans          &trans            &trans     &trans &trans &trans  &trans  &trans
-                               &trans         &trans          &mo ADJUST      &mo ADJUST        &trans     &trans
+   &reset     &kp F1       &kp F2       &kp F3       &kp F4       &kp F5       &kp F6 &kp F7 &kp F8 &kp F9  &kp F10 &reset
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans &trans &trans &kp F11 &kp F12 &trans
+   &trans     &trans       &trans       &trans       &trans       &trans       &trans &trans &trans &trans  &trans  &trans
+                                        &trans       &trans       &mo 3        &mo 3  &trans &trans
                         >;
                 };
         };
