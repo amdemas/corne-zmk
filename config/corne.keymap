@@ -18,12 +18,13 @@
 	    flavor = "tap-preferred";
 	    bindings = <&kp>, <&kp>;
 	};
+
         keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
 // .----------------------------------------------------------.       .-----------------------------------------------------------.
-// | CTRL/Tab |    Q    |    W   |   E    |    R    |    T    |       |   Y   |    U    |    I    |    O    |     P    |   BSPC   |
+// |   CTRL   |    Q    |    W   |   E    |    R    |    T    |       |   Y   |    U    |    I    |    O    |     P    |   BSPC   |
 // |----------+---------+--------+--------+---------+---------|       |-------+---------+---------+---------+----------+----------|
 // |   GESC   |    A    |    S   |   D    |    F    |    G    |       |   H   |    J    |    K    |    L    |     ;    |     '    |
 // |----------+---------+--------+--------+---------+---------|       |-------+---------+---------+---------+----------+----------|
@@ -32,9 +33,9 @@
 //                               |  GUI   |  LSFT   |   ENT   |       |  SPC  |  RSHFT  |   GUI   |
 //                               '--------+---------+---------'       '-------+---------+---------'
                         bindings = <
-   &hm TAB LCTRL &kp Q       &kp W      &kp E    &kp R     &kp T       &kp Y       &kp U     &kp I     &kp O        &kp P         &kp BSPC
-   &hm TAB ESC   &kp A       &kp S      &kp D    &kp F     &kp G       &kp H       &kp J     &kp K     &kp L        &kp SEMI      &kp SQT
-   &kp LSHFT     &hm LCTRL Z &hm LALT X &kp C    &kp V     &kp B       &kp N       &kp M     &kp COMMA &hm RALT DOT &hm LCTRL FSLH &kp DEL
+   &kp TAB   &kp Q       &kp W      &kp E    &kp R     &kp T       &kp Y       &kp U     &kp I     &kp O        &kp P         &kp BSPC
+   &gresc    &kp A       &kp S      &kp D    &kp F     &kp G       &kp H       &kp J     &kp K     &kp L        &kp SEMI      &kp SQT
+   &kp LSHFT &hm LCTRL Z &hm LALT X &kp C    &kp V     &kp B       &kp N       &kp M     &kp COMMA &hm RALT DOT &hm LCTRL FSLH &kp DEL
                                         &kp LGUI &kp LSHFT &lt 1 RET   &lt 2 SPACE &kp RSHFT &kp RGUI
                         >;
                 };
