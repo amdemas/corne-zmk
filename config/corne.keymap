@@ -67,7 +67,7 @@
    &trans    &kp N1      &kp N2       &kp N3       &kp N4       &kp N5               &kp N6          &kp N7         &kp N8         &kp N9         &kp N0         &trans
    &trans    &kp K_MUTE  &kp K_VOL_DN &kp K_VOL_UP &kp K_NEXT   &kp C_PLAY           &kp LEFT        &kp DOWN       &kp UP         &kp RIGHT      &trans         &trans
    &trans    &kp K_UNDO  &kp K_CUT    &kp K_COPY   &kp K_PASTE  &kp PG_DN            &kp CAPS        &kp INSERT     &out OUT_TOG   &trans         &trans         &trans
-                                      &trans       &trans       &mo ADJUST           &trans          &trans         &trans
+                                      &trans       &trans       &trans               &mo ADJUST      &trans         &trans
             >;
         };
 
