@@ -23,17 +23,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: zmkfirmware/zmk-build-arm:2.5
+      image: zmkfirmware/zmk-build-arm:stable
     needs: matrix
     name: Build
     strategy:
       fail-fast: false
       matrix: ${{fromJson(needs.matrix.outputs.matrix)}}
     steps:
-      - name: Setup cmake
-        uses: jwlawson/actions-setup-cmake@v1.12
-        with:
-          cmake-version: '3.20.0'
       - name: Prepare variables
         id: variables
         run: |
@@ -62,8 +58,11 @@ jobs:
             zephyr/
             bootloader/
             zmk/
-          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('config/west.yml') }}
-          restore-keys: ${{ runner.os }}-${{ env.cache-name }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('manifest-dir/west.yml') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
       - name: West Init
         run: west init -l config
       - name: West Update
