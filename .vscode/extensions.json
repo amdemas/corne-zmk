@@ -1,8 +1,0 @@
-// Suggested extensions
-{
-    "recommendations": [
-      "spadin.zmk-tools",
-      "plorefice.devicetree",
-      "trond-snekvik.devicetree",
-    ]
-  }
