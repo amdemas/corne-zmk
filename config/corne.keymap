@@ -26,25 +26,40 @@
 
 // Helper for defining combos
 #define COMBO(NAME, TIMEOUT, BINDINGS, KEYPOS, LAYERS) \
-  combo_##NAME { \
+combo_##NAME { \
     timeout-ms = <TIMEOUT>; \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
     layers = <LAYERS>; \
-  };
+};
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        COMBO(escape, 50, &kp ESC, 0 1, 0)
+    };
+
     behaviors {
-        am: alpha_mods {
+        hm_l: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
-            label = "ALPHA_MT";
+            label = "HOMEROW_MODS_L";
             #binding-cells = <2>;
-            tapping-term-ms = <250>;
-            quick-tap-ms = <150>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <250>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        hm_r: homerow_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_R";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <250>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
     };
+
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
@@ -52,10 +67,7 @@
             then-layer = <ADJ>;
         };
     };
-    combos {
-        compatible = "zmk,combos";
-        COMBO(escape, 50, &kp ESC, 0 1, 0)
-    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -70,10 +82,10 @@
 //                               |  GUI   |  LSFT   |   ENT   |       |  SPC  |  RSHFT  |   GUI   |
 //                               '--------+---------+---------'       '-------+---------+---------'
             bindings = <
-   &kp TAB   &kp Q       &kp W       &kp E       &kp R       &kp T                &kp Y           &kp U          &kp I          &kp O          &kp P          &kp BSPC
-   &gresc    &kp A       &kp S       &kp D       &kp F       &kp G                &kp H           &kp J          &kp K          &kp L          &kp SEMI       &kp SQT
-   &kp LSHFT &am LCTRL Z &am LALT X  &am LGUI C  &kp V       &kp B                &kp N           &kp M          &am LGUI COMMA &am RALT DOT   &am LCTRL FSLH &kp DEL
-                                     &kp LGUI    &kp LSHFT   &lt LWR RET          &lt RSE SPACE   &kp RSHFT      &kp RGUI
+   &kp TAB   &kp Q         &kp W         &kp E        &kp R       &kp T          &kp Y           &kp U          &kp I            &kp O            &kp P            &kp BSPC
+   &gresc    &kp A         &kp S         &kp D        &kp F       &kp G          &kp H           &kp J          &kp K            &kp L           &kp SEMI          &kp SQT
+   &kp LSHFT &hm_l LCTRL Z &hm_l LALT X  &hm_l LGUI C &kp V       &kp B          &kp N           &kp M          &hm_r LGUI COMMA &hm_r RALT DOT   &hm_r LCTRL FSLH &kp DEL
+                                         &kp LGUI     &kp LSHFT   &lt LWR RET    &lt RSE SPACE   &kp RSHFT      &kp RGUI
             >;
         };
 
