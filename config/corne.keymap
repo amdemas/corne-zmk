@@ -110,7 +110,7 @@ combo_##NAME { \
            &aml LCTRL Z &aml LGUI X &aml LALT C  &kp V  &kp B          &kp N      &kp M   &amr RALT COMMA &amr RGUI DOT &amr LCTRL FSLH
         //╰──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────╯
         //                      |   GUI    |   LSFT   |   ENT    |   |  SPACE   |  RSHFT   |   GUI    |
-                                  &kp LGUI  &kp LSHFT &lt LWR RET    &lt RSE SPACE &kp RSHFT &kp RGUI
+                                  &kp LGUI  &kp LSHFT &lt LOWER RET  &lt RAISE SPACE &kp RSHFT &kp RGUI
         //                      ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
             >;
         };
