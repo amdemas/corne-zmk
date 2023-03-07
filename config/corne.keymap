@@ -160,11 +160,11 @@ combo_##NAME { \
         //|          |          |          |          |          |   |          |          |          |    F11   |   F12    |
             &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &kp F11    &kp F12
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //|  RESET   |  BTCLR   | USB/BT   |          |          |   |          |          |          |          |          |
-            &reset    &bt BT_CLR &out OUT_TOG &trans    &trans         &trans     &trans     &trans     &trans     &trans
+        //|  RESET   |  BTCLR   | USB/BT   |          |          |   |          |          |          |          | RESET    |
+            &reset    &bt BT_CLR &out OUT_TOG &trans    &trans         &trans     &trans     &trans     &trans     &reset
         //╰──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────╯
-        //                      |          |          | ADJUST   |   | ADJUST   |          |          |
-                                  &trans     &trans     &trans         &trans     &trans     &trans
+        //                      |          |          |          |   |          |          |          |
+                                 &bootloader  &trans     &trans        &trans     &trans    &bootloader
         //                      ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
             >;
 
