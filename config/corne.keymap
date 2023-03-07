@@ -1,5 +1,8 @@
-// Copyright (c) 2022 The ZMK Contributors
-// SPDX-License-Identifier: MIT
+/*
+ * Copyright (c) 2022 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
@@ -29,16 +32,42 @@ combo_##NAME { \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
     layers = <LAYERS>; \
-
-/ {
-  chosen {
-    zmk,matrix_transform = &five_column_transform;
-  };
 };
 
+
 / {
+    chosen {
+        zmk,matrix_transform = &five_column_transform;
+    };
+
+    combos {
+        compatible = "zmk,combos";
+        COMBO(tab, 50, &kp TAB, 0 1, 0)
+        COMBO(escape, 50, &kp ESC, 10 11, 0)
+        COMBO(backspace, 50, &kp BSPC, 8 9, 0)
+        COMBO(apos, 50, &kp APOS, 18 19, 0)
+    };
+
     behaviors {
-        hm_l: homerow_mods_left {
+        aml: homerow_mods_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ALPA_MODS_L";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <250>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        amr: homerow_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ALPA_MODS_R";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <250>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        hml: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_L";
             #binding-cells = <2>;
@@ -47,7 +76,7 @@ combo_##NAME { \
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-        hm_r: homerow_mods_right {
+        hmr: homerow_mods_right {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_R";
             #binding-cells = <2>;
@@ -65,14 +94,10 @@ combo_##NAME { \
             then-layer = <ADJ>;
         };
     };
-    combos {
-        compatible = "zmk,combos";
-        COMBO(escape, 50, &kp ESC, 0 1, 0)
-    };
+
     keymap {
         compatible = "zmk,keymap";
-        default_layer {
-            label = "Default";
+        DEFAULT {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //|    Q     |    W     |    E     |    R     |    T     |   |    Y     |    U     |    I     |    O     |    P     |
@@ -82,16 +107,15 @@ combo_##NAME { \
             &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //|    Z     |    X     |    C     |    V     |    B     |   |    N     |    M     |    ,     |    .     |    /     |
-           &am LCTRL Z &am LGUI X &am LALT C  &kp V      &kp B          &kp N      &kp M   &am RALT COMMA &am RGUI DOT &am LCTRL FSLH
+           &aml LCTRL Z &aml LGUI X &aml LALT C  &kp V  &kp B          &kp N      &kp M   &amr RALT COMMA &amr RGUI DOT &amr LCTRL FSLH
         //╰──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────╯
         //                      |   GUI    |   LSFT   |   ENT    |   |  SPACE   |  RSHFT   |   GUI    |
-                                  &kp LGUI  &kp LSHFT &tl LWR RET    &tl RSE SPACE &kp RSHFT &kp RGUI
+                                  &kp LGUI  &kp LSHFT &lt LWR RET    &lt RSE SPACE &kp RSHFT &kp RGUI
         //                      ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
             >;
         };
 
-        lower_layer {
-            label = "Lower";
+        LOWER {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //|    1     |    2     |    3     |    4     |    5     |   |    6     |    7     |    8     |    9     |    0     |
@@ -109,8 +133,7 @@ combo_##NAME { \
             >;
         };
 
-        raise_layer {
-            label = "Raise";
+        RAISE {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //|    !     |    @     |    #     |    $     |    %     |   |    ^     |    &     |    *     |    (     |     )    |
@@ -128,8 +151,7 @@ combo_##NAME { \
             >;
         };
 
-        adjust_layer {
-            label = "Adjust";
+        ADJUST {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //|    F1    |    F2    |    F3    |    F4    |    F5    |   |    F6    |    F7    |    F8    |    F9    |   F10    |
