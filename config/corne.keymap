@@ -10,10 +10,10 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 // Layer Definitions
-#define DEF 0
-#define LWR 1
-#define RSE 2
-#define ADJ 3
+#define DEFAULT 0
+#define LOWER 1
+#define RAISE 2
+#define ADJUST 3
 
 &mt {
     tapping-term-ms = <201>;
@@ -90,8 +90,8 @@ combo_##NAME { \
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
-            if-layers = <LWR RSE>;
-            then-layer = <ADJ>;
+            if-layers = <LOWER RAISE>;
+            then-layer = <ADJUST>;
         };
     };
 
