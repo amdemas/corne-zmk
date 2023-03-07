@@ -14,6 +14,9 @@
 #define LOWER 1
 #define RAISE 2
 #define ADJUST 3
+#define LWR_RET &lt LOWER RET
+#define RSE_SPC &lt RAISE SPACE
+#
 
 &mt {
     tapping-term-ms = <201>;
@@ -46,6 +49,9 @@ combo_##NAME { \
         COMBO(escape, 50, &kp ESC, 10 11, 0)
         COMBO(backspace, 50, &kp BSPC, 8 9, 0)
         COMBO(apos, 50, &kp APOS, 18 19, 0)
+        COMBO(grave, 50, &kp GRAVE, 28 29, 0)
+        COMBO(funceleven, 50, &kp F11, 7 8, 3)
+        COMBO(functwelve, 50, &kp F12, 8 9, 3)
     };
 
     behaviors {
@@ -95,6 +101,17 @@ combo_##NAME { \
         };
     };
 
+    macros {
+
+        // Emoji
+        linux_emoji: linux_emoji {
+            label = "linux_emoji";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LCTRL>, <&macro_tap &kp DOT>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
         default_layer {
@@ -111,7 +128,7 @@ combo_##NAME { \
            &aml LCTRL Z &aml LGUI X &aml LALT C  &kp V  &kp B          &kp N      &kp M   &amr RALT COMMA &amr RGUI DOT &amr LCTRL FSLH
         //╰──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────╯
         //                      |   GUI    |   LSFT   |   ENT    |   |  SPACE   |  RSHFT   |   GUI    |
-                                  &kp LGUI  &kp LSHFT &lt LOWER RET  &lt RAISE SPACE &kp RSHFT &kp RGUI
+                                  &kp LGUI  &kp LSHFT   LWR_RET        RSE_SPC   &kp RSHFT &kp RGUI
         //                      ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
             >;
         };
@@ -123,8 +140,8 @@ combo_##NAME { \
         //|    1     |    2     |    3     |    4     |    5     |   |    6     |    7     |    8     |    9     |    0     |
              &kp N1    &kp N2     &kp N3     &kp N4     &kp N5         &kp N6     &kp N7     &kp N8     &kp N9     &kp N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //|   MUTE   | VOL DWN  |  VOL UP  |   NEXT   |   PLAY   |   |    UP    |   DOWN   |   LEFT   |   RIGHT  |          |
-           &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &kp K_NEXT &kp C_PLAY  &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &trans
+        //|   MUTE   | VOL DWN  |  VOL UP  |   NEXT   |   PLAY   |   |    UP    |   DOWN   |   LEFT   |   RIGHT  | EMOJI    |
+           &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &kp K_NEXT &kp C_PLAY  &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &linux_emoji
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //|   UNDO   |   CUT    |   COPY   |   PASTE  |  INSERT  |   |   CAPS   |          |          |          |          |
            &kp K_UNDO &kp K_CUT  &kp K_COPY &kp K_PASTE &kp INS        &kp CAPS    &trans     &trans     &trans     &trans
@@ -161,8 +178,8 @@ combo_##NAME { \
         //|    F1    |    F2    |    F3    |    F4    |    F5    |   |    F6    |    F7    |    F8    |    F9    |   F10    |
             &kp F1     &kp F2     &kp F3     &kp F4     &kp F5         &kp F6     &kp F7     &kp F8     &kp F9     &kp F10
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //|          |          |          |          |          |   |          |          |          |    F11   |   F12    |
-            &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &kp F11    &kp F12
+        //|          |          |          |          |          |   |          |          |          |          |          |
+            &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //|  RESET   |  BTCLR   | USB/BT   |          |          |   |          |          |          |          | RESET    |
             &reset    &bt BT_CLR &out OUT_TOG &trans    &trans         &trans     &trans     &trans     &trans     &reset
