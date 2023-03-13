@@ -5,6 +5,6 @@ It consists of a 36-keys base layout.
 
 <div align="center">
 
-  ![](scripts/corne-keymap.svg)
+  ![](scripts/corne_keymap.svg)
 
 </div>
