@@ -1,6 +1,6 @@
 // Define custom macros
 
-\ {
+/ {
     macros {
         // Emoji
         emoji: emoji {
