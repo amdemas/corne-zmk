@@ -9,6 +9,17 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/ext_power.h>
 
+#include "../zmk-nodefree-config/helper.h"
+#include "../zmk-nodefree-config/keypos_def/keypos_36keys.h"
+
+#define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4
+#define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4
+#define KEYS_T LH2 LH1 LH0 RH0 RH1 RH2
+
+#define QUICK_TAP_MS 175
+#define HM_TAPPING_TERM 300
+#define HM_TAPPING_TERM_FAST 200
+
 // Layer Definitions
 #define DEFAULT 0
 #define LOWER 1
@@ -16,17 +27,30 @@
 #define ADJUST 3
 #define LWR_RET &lt LOWER RET
 #define RSE_SPC &lt RAISE SPACE
-#
+#define VOLDN C_VOL_DN
+#define VOLUP C_VOL_UP
 
 &mt {
-    tapping-term-ms = <201>;
     flavor = "tap-preferred";
- };
-&sk {
-     release-after-ms = <2000>;
-     quick-release;
- };
+    tapping-term-ms = <220>;
+    quick-tap-ms = <220>;              // repeat on tap-into-hold
+    hold-trigger-key-positions = <0>;  // tap on interrupt
+};
 
+&sk {  // sticky-key config
+    release-after-ms = <600>;  // release after 0.6s
+    quick-release;             // no double capitalization when rolling keys
+};
+
+&sl {  // sticky-layer config
+    ignore-modifiers;
+};
+
+&lt {  // layer-tap config
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+};
 
 // Helper for defining combos
 #define COMBO(NAME, TIMEOUT, BINDINGS, KEYPOS, LAYERS) \
@@ -45,51 +69,58 @@ combo_##NAME { \
 
     combos {
         compatible = "zmk,combos";
-        COMBO(tab, 50, &kp TAB, 0 1, 0)
-        COMBO(escape, 50, &kp ESC, 10 11, 0)
-        COMBO(backspace, 50, &kp BSPC, 8 9, 0)
-        COMBO(apos, 50, &kp APOS, 18 19, 0)
-        COMBO(grave, 50, &kp GRAVE, 28 29, 0)
+        COMBO(tab, 50, &kp TAB, 0 1, 0 1 2)
+        COMBO(escape, 50, &kp ESC, 10 11, 0 1 2)
+        COMBO(backspace, 50, &kp BSPC, 8 9, 0 1 2)
+        COMBO(apos, 50, &kp APOS, 18 19, 0 1 2)
+        COMBO(grave, 50, &kp GRAVE, 28 29, 0 1 2)
         COMBO(funceleven, 50, &kp F11, 7 8, 3)
         COMBO(functwelve, 50, &kp F12, 8 9, 3)
     };
 
     behaviors {
-        aml: homerow_mods_left {
-            compatible = "zmk,behavior-hold-tap";
-            label = "ALPA_MODS_L";
-            #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            quick-tap-ms = <250>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-        amr: homerow_mods_right {
-            compatible = "zmk,behavior-hold-tap";
-            label = "ALPA_MODS_R";
-            #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            quick-tap-ms = <250>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
         hml: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_L";
+            label = "HOMEROW_MODS_LEFT";
             #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            quick-tap-ms = <250>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
+            bindings = <&kp>,  <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HM_TAPPING_TERM>;
+            quick-tap-ms = <QUICK_TAP_MS>;                // repeat on tap-into-hold
+            global-quick-tap-ms = <150>;         // requires PR #1387
+            hold-trigger-key-positions = <KEYS_R KEYS_T>;
+            hold-trigger-on-release;
         };
+
         hmr: homerow_mods_right {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_R";
+            label = "HOMEROW_MODS_RIGHT";
             #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            quick-tap-ms = <250>;
-            flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HM_TAPPING_TERM>;
+            quick_tap_ms = <QUICK_TAP_MS>;
+            global-quick-tap-ms = <150>;
+            hold-trigger-key-positions = <KEYS_L KEYS_T>;
+            hold-trigger-on-release;
+        };
+
+        bs_del: tap_dance_bs_del {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_BSC_DEL";
+            #binding-cells = <0>;
+            tapping-term-ms = <HM_TAPPING_TERM_FAST>;
+            bindings = <&kp BSPC>, <&kp DEL>;
+        };
+
+        semi_apos: tap_dance_semi_apos {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_SEMI_GRAVE";
+            #binding-cells = <0>;
+            tapping-term-ms = <HM_TAPPING_TERM_FAST>;
+            bindings = <&kp SEMI>, <&kp APOS>;
         };
     };
 
@@ -104,8 +135,8 @@ combo_##NAME { \
     macros {
 
         // Emoji
-        linux_emoji: linux_emoji {
-            label = "linux_emoji";
+        emoji: emoji {
+            label = "emoji";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_press &kp LCTRL>, <&macro_tap &kp DOT>;
@@ -121,11 +152,11 @@ combo_##NAME { \
         //|    Q     |    W     |    E     |    R     |    T     |   |    Y     |    U     |    I     |    O     |    P     |
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //|    A     |    S     |    D     |    F     |    G     |   |    H     |    J     |    K     |    L     |    ;     |
-            &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp SEMI
+        //|    A     |    S     |    D     |    F     |    G     |   |    H     |    J     |    K     |    L     |    ;/'   |
+            &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &semi_apos
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //|    Z     |    X     |    C     |    V     |    B     |   |    N     |    M     |    ,     |    .     |    /     |
-           &aml LCTRL Z &aml LGUI X &aml LALT C  &kp V  &kp B          &kp N      &kp M   &amr RALT COMMA &amr RGUI DOT &amr LCTRL FSLH
+           &hml LCTRL Z &hml LGUI X &hml LALT C  &kp V  &kp B          &kp N      &kp M   &hmr RALT COMMA &hmr RGUI DOT &hmr LCTRL FSLH
         //╰──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────╯
         //                      |   GUI    |   LSFT   |   ENT    |   |  SPACE   |  RSHFT   |   GUI    |
                                   &kp LGUI  &kp LSHFT   LWR_RET        RSE_SPC   &kp RSHFT &kp RGUI
@@ -138,13 +169,13 @@ combo_##NAME { \
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //|    1     |    2     |    3     |    4     |    5     |   |    6     |    7     |    8     |    9     |    0     |
-             &kp N1    &kp N2     &kp N3     &kp N4     &kp N5         &kp N6     &kp N7     &kp N8     &kp N9     &kp N0
+            &kp N1     &kp N2     &kp N3     &kp N4     &kp N5         &kp N6     &kp N7     &kp N8     &kp N9     &kp N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //|   MUTE   | VOL DWN  |  VOL UP  |   NEXT   |   PLAY   |   |    UP    |   DOWN   |   LEFT   |   RIGHT  | EMOJI    |
-           &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &kp K_NEXT &kp C_PLAY  &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &linux_emoji
+        //|   ESC    | VOL DWN  |  VOL UP  |   NEXT   |   PLAY   |   |    UP    |   DOWN   |   LEFT   |  RIGHT   |  EMOJI   |
+            &kp ESC   &kp VOLDN   &kp VOLUP &kp K_NEXT &kp C_PLAY      &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT &emoji
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //|   UNDO   |   CUT    |   COPY   |   PASTE  |  INSERT  |   |   CAPS   |          |          |          |          |
-           &kp K_UNDO &kp K_CUT  &kp K_COPY &kp K_PASTE &kp INS        &kp CAPS    &trans     &trans     &trans     &trans
+        //|          |          |          |          |   MUTE   |   |   UNDO   |   CUT    |   COPY   |   PASTE  |  INSERT  |
+            &kp CAPS    &trans     &trans     &trans   &kp C_MUTE     &kp K_UNDO &kp K_CUT  &kp K_COPY &kp K_PASTE &kp INS
         //╰──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────╯
         //                      |          |          |          |   |          |          |          |
                                   &trans     &trans     &trans         &trans     &trans     &trans
@@ -159,14 +190,14 @@ combo_##NAME { \
         //|    !     |    @     |    #     |    $     |    %     |   |    ^     |    &     |    *     |    (     |     )    |
             &kp EXCL   &kp AT     &kp HASH   &kp DLLR  &kp PRCNT      &kp CARET   &kp AMPS  &kp ASTRK   &kp LPAR   &kp RPAR
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //|    _     |    +     |    =     |    |     |    -     |   |   HOME   |   PGDN   |   PGUP   |   END    |   PSCRN  |
-            &kp UNDER  &kp PLUS   &kp EQUAL  &kp PIPE   &kp MINUS       &kp HOME  &kp PG_DN  &kp PG_UP   &kp END   &kp PSCRN
+        //|    _     |    +     |    =     |    |     |    -     |   |   HOME   |   PGDN   |   PGUP   |   END    |   BSPC   |
+            &kp UNDER  &kp PLUS   &kp EQUAL  &kp PIPE   &kp MINUS      &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &bs_del
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //|    \     |    <     |    {     |    (     |    [     |   |    ]     |    )     |    }     |    >     |    /     |
             &kp BSLH    &kp LT    &kp LBRC   &kp LPAR   &kp LBKT       &kp RBKT   &kp RPAR   &kp RBRC    &kp GT    &kp FSLH
         //╰──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────╯
-        //                      |          |          |          |   |          |          |          |
-                                    &trans     &trans     &trans         &trans     &trans     &trans
+        //                      |          |          |          |   |          |          |  PSCRN   |
+                                    &trans     &trans     &trans         &trans     &trans  &kp PSCRN
         //                      ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
             >;
         };
