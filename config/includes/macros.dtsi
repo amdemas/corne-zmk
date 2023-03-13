@@ -1,0 +1,13 @@
+// Define custom macros
+
+\ {
+    macros {
+        // Emoji
+        emoji: emoji {
+            label = "emoji";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LCTRL>, <&macro_tap &kp DOT>;
+        };
+    };
+};

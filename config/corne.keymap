@@ -8,10 +8,7 @@
 #define LOWER 1
 #define RAISE 2
 #define ADJUST 3
-#define LWR_RET &lt LOWER RET
-#define RSE_SPC &lt RAISE SPACE
-#define VOLDN C_VOL_DN
-#define VOLUP C_VOL_UP
+
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -21,76 +18,15 @@
 
 #include "includes/settings.dtsi"
 #include "includes/combos.dtsi"
-
+#include "includes/behaviors_extra.dtsi"
+#include "includes/conditional_layers.dtsi"
+#include "includes/custom_keycodes.dtsi"
+#include "includes/macros.dtsi"
+#include "includes/settings_pd.dtsi"
 
 / {
     chosen {
         zmk,matrix_transform = &five_column_transform;
-    };
-
-    behaviors {
-        hml: homerow_mods_left {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_LEFT";
-            #binding-cells = <2>;
-            bindings = <&kp>,  <&kp>;
-
-            flavor = "balanced";
-            tapping-term-ms = <HM_TAPPING_TERM>;
-            quick-tap-ms = <QUICK_TAP_MS>;                // repeat on tap-into-hold
-            global-quick-tap-ms = <150>;         // requires PR #1387
-            hold-trigger-key-positions = <KEYS_R KEYS_T>;
-            hold-trigger-on-release;
-        };
-
-        hmr: homerow_mods_right {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_RIGHT";
-            #binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
-
-            flavor = "balanced";
-            tapping-term-ms = <HM_TAPPING_TERM>;
-            quick_tap_ms = <QUICK_TAP_MS>;
-            global-quick-tap-ms = <150>;
-            hold-trigger-key-positions = <KEYS_L KEYS_T>;
-            hold-trigger-on-release;
-        };
-
-        bs_del: tap_dance_bs_del {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_BSC_DEL";
-            #binding-cells = <0>;
-            tapping-term-ms = <HM_TAPPING_TERM_FAST>;
-            bindings = <&kp BSPC>, <&kp DEL>;
-        };
-
-        semi_apos: tap_dance_semi_apos {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_SEMI_GRAVE";
-            #binding-cells = <0>;
-            tapping-term-ms = <HM_TAPPING_TERM_FAST>;
-            bindings = <&kp SEMI>, <&kp APOS>;
-        };
-    };
-
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <LOWER RAISE>;
-            then-layer = <ADJUST>;
-        };
-    };
-
-    macros {
-
-        // Emoji
-        emoji: emoji {
-            label = "emoji";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LCTRL>, <&macro_tap &kp DOT>;
-        };
     };
 
     keymap {
@@ -172,8 +108,4 @@
 
         };
     };
-};
-
-&nice_view_spi {
-    cs-gpios = <&pro_micro 0 GPIO_ACTIVE_HIGH>;
 };
