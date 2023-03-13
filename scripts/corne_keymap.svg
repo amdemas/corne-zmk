@@ -111,7 +111,7 @@ path {
 <rect rx="6.0" ry="6.0" x="648.0" y="119.60000000000002" width="52.0" height="52.0" class=""/>
 <text x="674.0" y="145.60000000000002" class="tap">L</text>
 <rect rx="6.0" ry="6.0" x="704.0" y="130.8" width="52.0" height="52.0" class=""/>
-<text x="730.0" y="156.8" class="tap">&amp;semi_apos</text>
+<text x="730.0" y="156.8" class="tap">;/&#x27;</text>
 <rect rx="6.0" ry="6.0" x="32.0" y="186.79999999999998" width="52.0" height="52.0" class=""/>
 <text x="58.0" y="212.79999999999998" class="tap">Z</text>
 <text x="58.0" y="236.79999999999998" class="hold">LCTRL</text>
@@ -204,7 +204,7 @@ path {
 <rect rx="6.0" ry="6.0" x="648.0" y="438.80000000000007" width="52.0" height="52.0" class=""/>
 <text x="674.0" y="464.80000000000007" class="tap">RIGHT</text>
 <rect rx="6.0" ry="6.0" x="704.0" y="450.00000000000006" width="52.0" height="52.0" class=""/>
-<text x="730.0" y="476.00000000000006" class="tap">&amp;emoji</text>
+<text x="730.0" y="476.00000000000006" class="tap">EMOJI</text>
 <rect rx="6.0" ry="6.0" x="32.0" y="506.0" width="52.0" height="52.0" class=""/>
 <text x="58.0" y="532.0" class="tap">CAPS</text>
 <rect rx="6.0" ry="6.0" x="88.0" y="494.80000000000007" width="52.0" height="52.0" class=""/>
@@ -274,7 +274,7 @@ path {
 <rect rx="6.0" ry="6.0" x="648.0" y="758.0000000000001" width="52.0" height="52.0" class=""/>
 <text x="674.0" y="784.0000000000001" class="tap">END</text>
 <rect rx="6.0" ry="6.0" x="704.0" y="769.2" width="52.0" height="52.0" class=""/>
-<text x="730.0" y="795.2" class="tap">&amp;bs_del</text>
+<text x="730.0" y="795.2" class="tap">BSC/DEL</text>
 <rect rx="6.0" ry="6.0" x="32.0" y="825.2" width="52.0" height="52.0" class=""/>
 <text x="58.0" y="851.2" class="tap">\</text>
 <rect rx="6.0" ry="6.0" x="88.0" y="814.0000000000001" width="52.0" height="52.0" class=""/>
@@ -338,7 +338,7 @@ path {
 <rect rx="6.0" ry="6.0" x="648.0" y="1077.2" width="52.0" height="52.0" class=""/>
 <rect rx="6.0" ry="6.0" x="704.0" y="1088.4" width="52.0" height="52.0" class=""/>
 <rect rx="6.0" ry="6.0" x="32.0" y="1144.4" width="52.0" height="52.0" class=""/>
-<text x="58.0" y="1170.4" class="tap">&amp;reset</text>
+<text x="58.0" y="1170.4" class="tap">RESET</text>
 <rect rx="6.0" ry="6.0" x="88.0" y="1133.2" width="52.0" height="52.0" class=""/>
 <text x="114.0" y="1159.2" class="tap">
 <tspan x="114.0" dy="-0.6em">BT</tspan><tspan x="114.0" dy="1.2em">CLR</tspan></text>
@@ -352,15 +352,15 @@ path {
 <rect rx="6.0" ry="6.0" x="592.0" y="1127.6000000000001" width="52.0" height="52.0" class=""/>
 <rect rx="6.0" ry="6.0" x="648.0" y="1133.2" width="52.0" height="52.0" class=""/>
 <rect rx="6.0" ry="6.0" x="704.0" y="1144.4" width="52.0" height="52.0" class=""/>
-<text x="730.0" y="1170.4" class="tap">&amp;reset</text>
+<text x="730.0" y="1170.4" class="tap">RESET</text>
 <rect rx="6.0" ry="6.0" x="200.0" y="1222.8000000000002" width="52.0" height="52.0" class=""/>
-<text x="226.0" y="1248.8000000000002" class="tap">&amp;bootloader</text>
+<text x="226.0" y="1248.8000000000002" class="tap">BOOT</text>
 <rect rx="6.0" ry="6.0" x="256.0" y="1222.8000000000002" width="52.0" height="52.0" class=""/>
 <rect rx="6.0" ry="6.0" x="312.0" y="1194.8000000000002" width="52.0" height="80.0" class=""/>
 <rect rx="6.0" ry="6.0" x="424.0" y="1194.8000000000002" width="52.0" height="80.0" class=""/>
 <rect rx="6.0" ry="6.0" x="480.0" y="1222.8000000000002" width="52.0" height="52.0" class=""/>
 <rect rx="6.0" ry="6.0" x="536.0" y="1222.8000000000002" width="52.0" height="52.0" class=""/>
-<text x="562.0" y="1248.8000000000002" class="tap">&amp;bootloader</text>
+<text x="562.0" y="1248.8000000000002" class="tap">BOOT</text>
 <rect rx="6.0" ry="6.0" x="632.0" y="1031.4" width="28.0" height="26.0" class="combo"/>
 <text x="646.0" y="1044.4" class="combo">F11</text>
 <rect rx="6.0" ry="6.0" x="688.0" y="1039.8000000000002" width="28.0" height="26.0" class="combo"/>
