@@ -8,6 +8,10 @@
 #define LOWER 1
 #define RAISE 2
 #define ADJUST 3
+#define LWR_RET &lt LOWER RET
+#define RSE_SPC &lt RAISE SPACE
+#define VOLDN C_VOL_DN
+#define VOLUP C_VOL_UP
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -18,11 +22,6 @@
 #include "includes/settings.dtsi"
 #include "includes/combos.dtsi"
 
-
-#define LWR_RET &lt LOWER RET
-#define RSE_SPC &lt RAISE SPACE
-#define VOLDN C_VOL_DN
-#define VOLUP C_VOL_UP
 
 / {
     chosen {
