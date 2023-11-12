@@ -6,3 +6,4 @@ tools
 zephyr
 zmk
 .envrc
+.venv

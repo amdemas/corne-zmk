@@ -1,10 +1,13 @@
 # amdemas' zmk-config
 
 This is my personal [ZMK firmware](https://github.com/zmkfirmware/zmk/) configuration.
-It consists of a 36-keys base layout.
 
-<div align="center">
 
-  ![](scripts/corne_keymap.svg)
+## Keymap (generated with Caksoylar's [keymap-drawer](https://github.com/caksoylar/keymap-drawer))
 
-</div>
+### [Corne 3x5](./config/corne36.keymap)
+![36 key layout (generated with Caksoylar's keymap-drawer)](./assets/corne_keymap36.svg)
+
+### [Corne](./assets/cornep.keyamp)
+![42 key layout (generated with Caksoylar's keymap-drawer)](./config/corne.keymap)
+  ![](assets/corne_keymap.svg)

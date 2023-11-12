@@ -1,21 +1,35 @@
 {
-    "name": "ZMK Development",
-    "dockerFile": "Dockerfile",
-    "runArgs": ["--security-opt", "label=disable"],
-    "containerEnv": {
-      "WORKSPACE_DIR": "${containerWorkspaceFolder}",
-      "PROMPT_COMMAND": "history -a"
-    },
-    "mounts": [
-      "type=volume,source=zmk-root-user,target=/root",
-      "type=volume,source=zmk-config,target=/workspaces/zmk-config",
-      "type=volume,source=zmk-zephyr,target=${containerWorkspaceFolder}/zephyr",
-      "type=volume,source=zmk-zephyr-modules,target=${containerWorkspaceFolder}/modules",
-      "type=volume,source=zmk-zephyr-tools,target=${containerWorkspaceFolder}/tools"
-    ],
-    "extensions": ["ms-vscode.cpptools"],
-    "settings": {
-      "terminal.integrated.shell.linux": "/bin/bash"
-    },
-    "forwardPorts": [3000]
-  }
+  "name": "ZMK Development",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      // git clone settings
+      "ZMK_URL": "https://github.com/zmkfirmware/zmk.git",
+      "ZMK_BRANCH": "main",
+      "ZMK_PATH": "/zmk",
+      "WORKPACE_PATH": "${containerWorkspaceFolder}"
+    }
+  },
+  "runArgs": ["--security-opt", "label=disable"],
+  // update zmk after run
+  "updateContentCommand": "cd $ZMK_PATH && git pull",
+  "containerEnv": {
+        // vars for the build scripts
+        "WORKPACE_PATH": "${containerWorkspaceFolder}",
+        "ZMK_PATH": "/zmk",
+        "BUILD_SUBFOLDER": "build"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "spadin.zmk-tools",
+        "SimonSiefke.svg-preview"
+      ],
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+      }
+    }
+  },
+  "forwardPorts": [3000]
+}
