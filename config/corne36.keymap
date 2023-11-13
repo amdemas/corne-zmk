@@ -94,7 +94,7 @@
             &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //|  RESET   |  BTCLR   | USB/BT   |          |          |   |          |          |          |          | RESET    |
-            &reset    &bt BT_CLR &out OUT_TOG &trans    &trans         &trans     &trans     &trans     &trans     &reset
+            &sys_reset &bt BT_CLR &out OUT_TOG &trans   &trans         &trans     &trans     &trans     &trans     &sys_reset
         //╰──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────╯
         //                      |          |          |          |   |          |          |          |
                                  &bootloader  &trans     &trans        &trans     &trans    &bootloader
