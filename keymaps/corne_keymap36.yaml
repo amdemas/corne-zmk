@@ -87,7 +87,7 @@ layers:
     - {t: '$$mdi:transfer$$', type: trans}
     - {t: '$$mdi:transfer$$', type: trans}
     - {t: '$$mdi:transfer$$', type: trans}
-  - - '&reset'
+  - - {t: '$$mdi:backup-restore$$', type: bootloader}
     - $$mdi:bluetooth-off$$
     - {t: '$$mdi:toggle-switch$$', h: '$$mdi:bluetooth$$', s: '$$mdi:usb$$'}
     - {t: '$$mdi:transfer$$', type: trans}
@@ -96,7 +96,7 @@ layers:
     - {t: '$$mdi:transfer$$', type: trans}
     - {t: '$$mdi:transfer$$', type: trans}
     - {t: '$$mdi:transfer$$', type: trans}
-    - '&reset'
+    - {t: '$$mdi:backup-restore$$', type: bootloader}
   - - $$mdi:progress-download$$
     - {t: '$$mdi:transfer$$', type: trans}
     - {type: held}

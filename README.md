@@ -8,6 +8,5 @@ This is my personal [ZMK firmware](https://github.com/zmkfirmware/zmk/) configur
 ### [Corne 3x5](./config/corne36.keymap)
 ![36 key layout (generated with Caksoylar's keymap-drawer)](./keymaps/corne_keymap36.svg)
 
-### [Corne](./config/cornep.keyamp)
-![42 key layout (generated with Caksoylar's keymap-drawer)](./config/corne.keymap)
-  ![](keymaps/corne_keymap.svg)
+### [Corne](./config/corne.keyamp)
+![42 key layout (generated with Caksoylar's keymap-drawer)](./keymaps/corne_keymap.svg)
