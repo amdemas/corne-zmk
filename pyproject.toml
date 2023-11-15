@@ -22,10 +22,6 @@ tool.poe.shell_interpreter = "bash"
 
 [tool.poe.tasks.gen-keymap-image]
 shell = """
-    keymap -c keymaps/keymap-drawer.yaml parse -c 10 -z config/corne36.keymap > keymaps/corne_keymap36.yaml &&
-    keymap -c keymaps/keymap-drawer.yaml draw -k crkbd/rev1 -l LAYOUT_split_3x5_3 keymaps/corne_keymap36.yaml > keymaps/corne_keymap36.svg &&
-    #rm corne_keymap36.yaml &&
     keymap -c keymaps/keymap-drawer.yaml parse -c 10 -z config/corne.keymap > keymaps/corne_keymap.yaml &&
-    keymap -c keymaps/keymap-drawer.yaml draw -k crkbd/rev1 -l LAYOUT_split_3x6_3 keymaps/corne_keymap.yaml > keymaps/corne_keymap.svg
-    #rm corne_keymap.yaml
+    keymap -c keymaps/keymap-drawer.yaml draw -k crkbd/rev1 -l LAYOUT_split_3x5_3 keymaps/corne_keymap.yaml > keymaps/corne_keymap.svg
 """

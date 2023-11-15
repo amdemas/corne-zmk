@@ -37,7 +37,7 @@
             hold-trigger-on-release;
         };
 
-        bs_del: tap_dance_bs_del {
+        bkspc_del: tap_dance_bs_del {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_BSC_DEL";
             #binding-cells = <0>;

@@ -185,7 +185,7 @@ draw_config:
         --color--key--text--shifted: var(--color--material--blue-gray--500);
         --color--key--text--hold: var(--color--material--blue-gray--500);
 
-        --color--combo--bg: var(--color--material--blue-gray--100);
+        --color--combo--bg: var(--color--material--blue-light--100);
         --color--combo--border: var(--color--combo--bg);
         --color--combo--dendron: var(--color--combo--border);
         --color--combo--text--tap: var(--color--material--blue-gray--800);
@@ -301,7 +301,7 @@ draw_config:
         font-size: 16px;
     }
     .combo.shifted {
-        font-size: 13px;
+        font-size: 15px;
         translate: -9px -2px;
     }
     .combo.hold {
@@ -355,32 +355,32 @@ draw_config:
 
     /* Outer column + thumb keys */
     .keypos-0,
-    .keypos-11,
-    .keypos-12,
-    .keypos-23,
-    .keypos-24,
-    .keypos-35,
-    .keypos-36,
-    .keypos-37,
-    .keypos-38,
-    .keypos-39,
-    .keypos-40,
-    .keypos-41 {
+    .keypos-9,
+    .keypos-10,
+    .keypos-19,
+    .keypos-20,
+    .keypos-29,
+    .keypos-30,
+    .keypos-31,
+    .keypos-32,
+    .keypos-34,
+    .keypos-35 {
         --color--key--bg: var(--color--material--blue-gray--100);
         --color--key--border: var(--color--material--blue-gray--50);
     }
 
-    .keypos-12 {
+    .keypos-32 {
         --color--key--bg: var(--color--material--red--300);
         --color--key--border: var(--color--material--red--200);
         --color--key--text--shifted: var(--color--key--text--tap);
         --color--key--text--hold: var(--color--key--text--tap);
     }
 
-    .keypos-23 {
+    .keypos-33 {
         --color--key--bg: var(--color--material--teal--200);
         --color--key--border: var(--color--material--teal--100);
     }
+
 
 parse_config:
   mark_alternate_layer_activators: true
@@ -391,25 +391,19 @@ parse_config:
 
   raw_binding_map:
     # Layers
-    "&smart_num L2 0":
-      shifted: $$mdi:alpha-w-box$$
-      tap: L2
-      hold: $$mdi:gesture-tap-hold$$
-    "&csl Fn":
-      tap: Fn
-      hold: $$mdi:close-box$$
-    "&csl L2":
-      tap: L2
-      hold: $$mdi:close-box$$
-    "&cmo Fn":
-      tap: $$mdi:close-box$$
-      hold: Fn
-    "&cmo L2":
-      tap: $$mdi:close-box$$
-      hold: L2
+    # "&lt LOWER RET":
+    #   # shifted: $$mdi:pound-box$$
+    #   tap: $$mdi:keyboard-return$$
+    #   hold: LOWER
+
+    # "&lt RAISE SPACE":
+    #   # shifted: $$mdi:percent-box$$
+    #   tap: $$mdi:keyboard-space$$
+    #   hold: RAISE
 
     # Modifiers
     "&caps_word": $$mdi:alpha-w-box$$
+
     "&kt RSHIFT":
       tap: $$mdi:apple-keyboard-shift$$
       hold: $$mdi:toggle-switch$$
@@ -419,11 +413,23 @@ parse_config:
       tap: $$mdi:minus-circle-outline$$
       type: none
 
-    # Whitespace
+    # Misc
     "&bkspc_del":
       type: backspace
       tap: $$mdi:backspace$$
       shifted: $$mdi:backspace-reverse-outline$$
+    "&semi_apos":
+      tap: ";"
+      hold: "'"
+    "&emoji":
+      tap: $$mdi:emoticon-outline$$
+    "&spotlight":
+      tap: $$mdi:launch$$
+
+    "&wrk_left":
+      tap: $$mdi:dock-left$$
+    "&wrk_right":
+      tap: $$mdi:dock-right$$
 
     # Bluetooth
     "&bt BT_SEL 0":
@@ -454,9 +460,23 @@ parse_config:
     # Reset
     "&sys_reset":
       type: bootloader
-      tap: $$mdi:backup-restore$$
+      tap: $$mdi:restart$$
+
     "&bootloader":
-      tap: $$mdi:progress-download$$
+      tap: $$mdi:cog-clockwise$$
+
+    # Mouse
+    "&mkp MB1": $$mdi:gesture-tap-button$$
+    "&mkp MB2": $$mdi:cursor-default-click$$
+    "&mkp MB3": $$mdi:drag-variant$$
+    "&mmv MOVE_UP": $$mdi:mouse-move-up$$
+    "&mmv MOVE_DOWN": $$mdi:mouse-move-down$$
+    "&mmv MOVE_LEFT": $$mdi:mouse$$
+    "&mmv MOVE_RIGHT": $$mdi:mouse$$
+    "&mwh SCROLL_UP": $$mdi:mouse-move-vertical$$
+    "&mwh SCROLL_DOWN": $$mdi:mouse-move-vertical$$
+    "&mwh SCROLL_LEFT": $$mdi:mouse$$
+    "&mwh SCROLL_RIGHT": $$mdi:mouse$$
 
   # ZMK
   zmk_keycode_map:
@@ -593,16 +613,17 @@ parse_config:
       shifted: ")"
 
     # Modifiers
+    LGUI: $$mdi:apps$$
     LCTRL: $$mdi:apple-keyboard-control$$
     LALT: $$mdi:apple-keyboard-option$$
     LSHIFT: $$mdi:apple-keyboard-shift$$
     LSHFT: $$mdi:apple-keyboard-shift$$
-    LCMD: $$mdi:apple-keyboard-command$$
+    RGUI: $$mdi:apps$$
     RCTRL: $$mdi:apple-keyboard-control$$
     RALT: $$mdi:apple-keyboard-option$$
     RSHIFT: $$mdi:apple-keyboard-shift$$
     RSHFT: $$mdi:apple-keyboard-shift$$
-    RCMD: $$mdi:apple-keyboard-command$$
+
     # "Meh" key
     LS(LC(LALT)): $$mdi:star-three-points$$
 
@@ -611,9 +632,13 @@ parse_config:
     DOWN: $$mdi:arrow-down-bold$$
     LEFT: $$mdi:arrow-left-bold$$
     RIGHT: $$mdi:arrow-right-bold$$
+    PG_DN: $$mdi:arrow-expand-down$$
+    PG_UP: $$mdi:arrow-expand-up$$
+    HOME: $$mdi:home-outline$$
+    END: $$mdi:arrow-bottom-right$$
 
-    # Whitespace
-    ENTER:
+    # Control & Whitespace
+    RET:
       type: enter
       tap: $$mdi:keyboard-return$$
     ESC: $$mdi:keyboard-esc$$
@@ -629,14 +654,23 @@ parse_config:
     DELETE: $$mdi:backspace-reverse-outline$$
     DEL: $$mdi:backspace-reverse-outline$$
 
+    # Cut, Copy, Paste
+    K_UNDO: $$mdi:undo$$
+    K_CUT: $$mdi:content-cut$$
+    K_COPY: $$mdi:content-copy$$
+    K_PASTE: $$mdi:content-paste$$
+    INS: $$mdi:content-save-plus-outline$$
+
     # Locks
-    CAPSLOCK: $$mdi:apple-keyboard-caps$$
-    CAPS: $$mdi:apple-keyboard-caps$$
+    CAPSLOCK: $$mdi:caps-lock$$
+    CAPS: $$mdi:caps-lock$$
 
     # Sound
     C_MUTE: $$mdi:volume-off$$
     C_VOL_UP: $$mdi:volume-high$$
     C_VOL_DN: $$mdi:volume-low$$
+    K_NEXT: $$mdi:skip-next$$
+    C_PLAY: $$mdi:play-pause$$
 
     # Media
     C_NEXT: $$mdi:skip-next$$
@@ -656,46 +690,25 @@ parse_config:
     C_AL_LOCK: $$mdi:lock$$
     K_CANCEL: $$mdi:close-box$$
 
-    # Zoom
-    RG(RS(A)):
-      tap: $$mdi:microphone$$
-      hold: zoom
-    RG(RS(V)):
-      tap: $$mdi:video$$
-      hold: zoom
+    # Miscellaneous
+    EMOJI: $$mdi:emoticon-wink-outline$$
+    PSCRN: $$mdi:monitor-screenshot$$
 
   zmk_combos:
-    combo_to_2:
-      align: top
-    combo_to_3:
-      align: top
-    combo_bt_clear:
-      align: top
-      offset: 0.03
-    combo_mute:
-      align: top
-      offset: 0.15
-    combo_minus:
+    combo_mouse:
       key:
-        shifted: "_"
-        hold: "-"
-    combo_equal:
+        tap: $$mdi:mouse$$
+    combo_grave:
       key:
-        shifted: "+"
-        hold: "="
-    combo_backslash:
+        tap: "`"
+        shifted: "~"
+    combo_apos:
       key:
-        shifted: "|"
-        hold: \
-    combo_lbkt:
+        tap: "'"
+        shifted: '"'
+    combo_caps:
       key:
-        shifted: "{"
-        hold: "["
-    combo_rbkt:
+        tap: $$mdi:caps-lock$$
+    combo_spotlight:
       key:
-        shifted: "}"
-        hold: "]"
-    combo_semicolon:
-      key:
-        shifted: ":"
-        hold: ";"
+        tap: $$mdi:launch$$

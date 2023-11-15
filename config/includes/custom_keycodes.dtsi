@@ -1,6 +1,0 @@
-// Custom defined keycodes and shortcuts
-
-#define LWR_RET &lt LOWER RET
-#define RSE_SPC &lt RAISE SPACE
-#define VOLDN C_VOL_DN
-#define VOLUP C_VOL_UP
