@@ -709,6 +709,6 @@ parse_config:
     combo_caps:
       key:
         tap: $$mdi:caps-lock$$
-    combo_spotlight:
+    combo_spot:
       key:
         tap: $$mdi:launch$$
