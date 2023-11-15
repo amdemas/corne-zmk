@@ -235,5 +235,5 @@ combos:
   k: '>'
   l: [BASE]
 - p: [3, 10]
-  k: spotlight
+  k: $$mdi:launch$$
   l: [BASE]
