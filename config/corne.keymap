@@ -91,7 +91,7 @@
         //|          |          |          |          | WH Down  |   | WH Down  |          |          |          |          |
             &trans     &trans     &trans     &trans     &U_WH_D        &U_WH_D     &trans     &trans     &trans     &trans
         //╰──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────╯
-        //                      |  Default |Right Click|Left Click|   |Left Click|Right Clck| Middle   |
+        //                      | Default  |Right Clck|Left Click|   |Left Click|Right Clck| Middle   |
                                 &to DEFAULT  &U_BTN1    &U_BTN2        &U_BTN2    &U_BTN1    &U_BTN3
         //                      ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
             >;
