@@ -99,9 +99,6 @@
 <svg id="mdi:keyboard-tab">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-keyboard-tab" viewBox="0 0 24 24"><path d="M20,18H22V6H20M11.59,7.41L15.17,11H1V13H15.17L11.59,16.58L13,18L19,12L13,6L11.59,7.41Z" /></svg>
 </svg>
-<svg id="mdi:launch">
-<svg xmlns="http://www.w3.org/2000/svg" id="mdi-launch" viewBox="0 0 24 24"><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" /></svg>
-</svg>
 <svg id="mdi:monitor-screenshot">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-monitor-screenshot" viewBox="0 0 24 24"><path d="M9,6H5V10H7V8H9M19,10H17V12H15V14H19M21,16H3V4H21M21,2H3C1.89,2 1,2.89 1,4V16A2,2 0 0,0 3,18H10V20H8V22H16V20H14V18H21A2,2 0 0,0 23,16V4C23,2.89 22.1,2 21,2" /></svg>
 </svg>
@@ -735,7 +732,7 @@ path.combo {
 <path d="M160,100 l95,-40" class="combo"/>
 <path d="M160,100 l-95,40" class="combo"/>
 <rect rx="4" ry="4" x="142" y="82" width="36" height="36" class="combo"/>
-<use href="#mdi:launch" xlink:href="#mdi:launch" x="147" y="87" height="26" width="26.0" class="combo tap glyph mdi:launch"/>
+<text x="160" y="100" class="combo tap"><tspan style="font-size: 60%">spotlight</tspan></text>
 </g>
 </g>
 </g>
