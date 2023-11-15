@@ -78,21 +78,21 @@
             >;
         };
 
-        nav_layer {
+        mouse_layer {
             label = "MOUSE";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //|          |          |          |          | WH UP    |   | WH UP    |          |          |          |          |
-            &trans     &trans     &trans     &trans     &U_WH_U        &U_WH_U    &trans     &trans     &trans     &trans
+            &trans     &trans     &trans     &trans     U_WH_U        U_WH_U    &trans     &trans     &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //|          | Ms Left  | MS Down  | MS Up    | MS Right |   | Ms Left  | MS Down  | MS Up    | MS Right |          |
-            &trans     &U_MS_L    &U_MS_D    &U_MS_U    &U_MS_R        &U_MS_L    &U_MS_D    &U_MS_U    &U_MS_R    &trans
+            &trans     U_MS_L     U_MS_D     U_MS_U     U_MS_R         U_MS_L     U_MS_D     U_MS_U     U_MS_R    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //|          |          |          |          | WH Down  |   | WH Down  |          |          |          |          |
-            &trans     &trans     &trans     &trans     &U_WH_D        &U_WH_D     &trans     &trans     &trans     &trans
+            &trans     &trans     &trans     &trans     U_WH_D         U_WH_D     &trans     &trans     &trans     &trans
         //╰──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────╯
         //                      | Default  |Right Clck|Left Click|   |Left Click|Right Clck| Middle   |
-                                &to DEFAULT  &U_BTN1    &U_BTN2        &U_BTN2    &U_BTN1    &U_BTN3
+                                &to DEFAULT  U_BTN1     U_BTN2         U_BTN2     U_BTN1     U_BTN3
         //                      ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
             >;
 
