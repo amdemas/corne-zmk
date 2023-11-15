@@ -1,5 +1,3 @@
-#include "../zmk-nodefree-config/helper.h"
-
 /* Copied (modified) from https://github.com/caksoylar/zmk-config */
 #define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, TERM, QUICKTAP) \
   combo_##NAME { \
