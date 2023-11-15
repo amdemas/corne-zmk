@@ -1,3 +1,7 @@
+#include "../zmk-nodefree-config/helper.h"
+#include "../zmk-nodefree-config/keypos_def/keypos_36keys.h"
+
+
 #include "includes/base.dtsi"
 #include "includes/settings.dtsi"
 #include "includes/combos.dtsi"
