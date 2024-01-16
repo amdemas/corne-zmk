@@ -500,8 +500,8 @@ path.combo {
     --color--key--border: var(--color--material--teal--100);
 }
 </style>
-<g transform="translate(30, 0)" class="layer-BASE">
-<text x="0" y="28" class="label">BASE</text>
+<g transform="translate(30, 0)" class="layer-default">
+<text x="0" y="28" class="label">default</text>
 <g transform="translate(0, 56)">
 <g transform="translate(40, 70)" class="key keypos-0">
 <rect rx="4" ry="4" x="-38" y="-38" width="76" height="76" class="key"/>
@@ -644,12 +644,12 @@ path.combo {
 <g transform="translate(422, 320) rotate(30.0)" class="key keypos-32">
 <rect rx="4" ry="4" x="-38" y="-58" width="76" height="116" class="key"/>
 <use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:keyboard-return"/>
-<text x="0" y="56" class="key hold">LOWER</text>
+<text x="0" y="56" class="key hold">lower</text>
 </g>
 <g transform="translate(618, 320) rotate(-30.0)" class="key keypos-33">
 <rect rx="4" ry="4" x="-38" y="-58" width="76" height="116" class="key"/>
 <use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:keyboard-space"/>
-<text x="0" y="56" class="key hold">RAISE</text>
+<text x="0" y="56" class="key hold">raise</text>
 </g>
 <g transform="translate(712, 304) rotate(-15.0)" class="key keypos-34">
 <rect rx="4" ry="4" x="-38" y="-38" width="76" height="76" class="key"/>
@@ -732,15 +732,19 @@ path.combo {
 <text x="520" y="220" class="combo tap">&gt;</text>
 </g>
 <g class="combo combopos-16">
-<path d="M160,100 l95,-40" class="combo"/>
-<path d="M160,100 l-95,40" class="combo"/>
-<rect rx="4" ry="4" x="142" y="82" width="36" height="36" class="combo"/>
-<use href="#mdi:launch" xlink:href="#mdi:launch" x="147" y="87" height="26" width="26.0" class="combo tap glyph mdi:launch"/>
+<rect rx="4" ry="4" x="142" y="107" width="36" height="36" class="combo"/>
+<use href="#mdi:launch" xlink:href="#mdi:launch" x="147" y="112" height="26" width="26.0" class="combo tap glyph mdi:launch"/>
+</g>
+<g class="combo combopos-17">
+<path d="M920,53 l-54,-9" class="combo"/>
+<path d="M920,53 l54,11" class="combo"/>
+<rect rx="4" ry="4" x="902" y="35" width="36" height="36" class="combo"/>
+<use href="#mdi:monitor-screenshot" xlink:href="#mdi:monitor-screenshot" x="907" y="40" height="26" width="26.0" class="combo tap glyph mdi:monitor-screenshot"/>
 </g>
 </g>
 </g>
-<g transform="translate(30, 448)" class="layer-LOWER">
-<text x="0" y="28" class="label">LOWER</text>
+<g transform="translate(30, 448)" class="layer-lower">
+<text x="0" y="28" class="label">lower</text>
 <g transform="translate(0, 56)">
 <g transform="translate(40, 70)" class="key keypos-0">
 <rect rx="4" ry="4" x="-38" y="-38" width="76" height="76" class="key"/>
@@ -901,8 +905,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(30, 897)" class="layer-RAISE">
-<text x="0" y="28" class="label">RAISE</text>
+<g transform="translate(30, 897)" class="layer-raise">
+<text x="0" y="28" class="label">raise</text>
 <g transform="translate(0, 56)">
 <g transform="translate(40, 70)" class="key keypos-0">
 <rect rx="4" ry="4" x="-38" y="-38" width="76" height="76" class="key"/>
@@ -1060,8 +1064,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(30, 1345)" class="layer-MOUSE">
-<text x="0" y="28" class="label">MOUSE</text>
+<g transform="translate(30, 1345)" class="layer-mouse">
+<text x="0" y="28" class="label">mouse</text>
 <g transform="translate(0, 56)">
 <g transform="translate(40, 70)" class="key trans keypos-0">
 <rect rx="4" ry="4" x="-38" y="-38" width="76" height="76" class="key trans"/>
@@ -1185,7 +1189,8 @@ path.combo {
 </g>
 <g transform="translate(240, 293)" class="key keypos-30">
 <rect rx="4" ry="4" x="-38" y="-38" width="76" height="76" class="key"/>
-<text x="0" y="0" class="key tap">BASE</text>
+<text x="0" y="0" class="key tap"><tspan style="font-size: 71%">default</tspan></text>
+<text x="0" y="36" class="key hold"><tspan style="font-size: 83%">toggle</tspan></text>
 </g>
 <g transform="translate(328, 304) rotate(15.0)" class="key keypos-31">
 <rect rx="4" ry="4" x="-38" y="-38" width="76" height="76" class="key"/>
@@ -1209,8 +1214,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(30, 1793)" class="layer-ADJUST">
-<text x="0" y="28" class="label">ADJUST</text>
+<g transform="translate(30, 1793)" class="layer-adjust">
+<text x="0" y="28" class="label">adjust</text>
 <g transform="translate(0, 56)">
 <g transform="translate(40, 70)" class="key keypos-0">
 <rect rx="4" ry="4" x="-38" y="-38" width="76" height="76" class="key"/>

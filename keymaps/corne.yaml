@@ -1,6 +1,6 @@
 layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x5_3}
 layers:
-  BASE:
+  default:
   - Q
   - W
   - E
@@ -33,11 +33,11 @@ layers:
   - {t: /, h: '$$mdi:apple-keyboard-control$$', s: '?'}
   - $$mdi:apps$$
   - $$mdi:apple-keyboard-shift$$
-  - {t: '$$mdi:keyboard-return$$', h: LOWER}
-  - {t: '$$mdi:keyboard-space$$', h: RAISE}
+  - {t: '$$mdi:keyboard-return$$', h: lower}
+  - {t: '$$mdi:keyboard-space$$', h: raise}
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:apps$$
-  LOWER:
+  lower:
   - {t: '1', s: '!'}
   - {t: '2', s: '@'}
   - {t: '3', s: '#'}
@@ -74,7 +74,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  RAISE:
+  raise:
   - '!'
   - '@'
   - '#'
@@ -111,7 +111,7 @@ layers:
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:monitor-screenshot$$
-  MOUSE:
+  mouse:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -142,13 +142,13 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - BASE
+  - {t: default, h: toggle}
   - $$mdi:gesture-tap-button$$
   - $$mdi:cursor-default-click$$
   - $$mdi:cursor-default-click$$
   - $$mdi:gesture-tap-button$$
   - $$mdi:drag-variant$$
-  ADJUST:
+  adjust:
   - F1
   - F2
   - F3
@@ -188,52 +188,55 @@ layers:
 combos:
 - p: [0, 1]
   k: $$mdi:keyboard-tab$$
-  l: [BASE]
+  l: [default]
 - p: [10, 11]
   k: $$mdi:keyboard-esc$$
-  l: [BASE]
+  l: [default]
 - p: [8, 9]
   k: {t: '$$mdi:backspace$$', type: backspace}
-  l: [BASE, LOWER, RAISE]
+  l: [default, lower, raise]
 - p: [18, 19]
   k: {t: '''', s: '"'}
-  l: [BASE]
+  l: [default]
 - p: [28, 29]
   k: {t: '`', s: '~'}
-  l: [BASE]
+  l: [default]
 - p: [31, 32]
   k: $$mdi:mouse$$
-  l: [BASE]
+  l: [default]
 - p: [3, 4]
   k: '{'
-  l: [BASE]
+  l: [default]
 - p: [5, 6]
   k: '}'
-  l: [BASE]
+  l: [default]
 - p: [13, 14]
   k: (
-  l: [BASE]
+  l: [default]
 - p: [15, 16]
   k: )
-  l: [BASE]
+  l: [default]
 - p: [23, 24]
   k: '['
-  l: [BASE]
+  l: [default]
 - p: [25, 26]
   k: ']'
-  l: [BASE]
+  l: [default]
 - p: [4, 5]
   k: $$mdi:caps-lock$$
-  l: [BASE]
+  l: [default]
 - p: [20, 21]
   k: \
-  l: [BASE]
+  l: [default]
 - p: [14, 15]
   k: <
-  l: [BASE]
+  l: [default]
 - p: [24, 25]
   k: '>'
-  l: [BASE]
-- p: [3, 10]
+  l: [default]
+- p: [11, 12]
   k: $$mdi:launch$$
-  l: [BASE]
+  l: [default]
+- p: [7, 8, 9]
+  k: $$mdi:monitor-screenshot$$
+  l: [default]
