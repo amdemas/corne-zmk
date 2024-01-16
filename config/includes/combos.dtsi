@@ -43,6 +43,7 @@
         COMBO(bslh, &kp BSLH, 20 21, DEFAULT, COMBO_TERM_SLOW)
         COMBO(lt, &kp LT, 14 15, DEFAULT, COMBO_TERM_SLOW)
         COMBO(gt, &kp GT, 24 25, DEFAULT, COMBO_TERM_SLOW)
-        COMBO(spot, &spot, 3 10, DEFAULT, COMBO_TERM_SLOW)
+        COMBO(spot, &spot, 11 12, DEFAULT, COMBO_TERM_SLOW)
+        COMBO(pscreen, &kp PSCRN, 7 8 9, DEFAULT, COMBO_TERM_SLOW)
     };
 };

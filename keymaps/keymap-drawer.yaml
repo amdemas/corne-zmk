@@ -712,3 +712,6 @@ parse_config:
     combo_spot:
       key:
         tap: $$mdi:launch$$
+    combo_pscreen:
+      key:
+        tap: $$mdi:monitor-screenshot$$
