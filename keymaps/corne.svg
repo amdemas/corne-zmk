@@ -114,9 +114,6 @@
 <svg id="mdi:mouse-move-up">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-mouse-move-up" viewBox="0 0 24 24"><path d="M7 9H2C2 6.04 4.17 3.57 7 3.09V9M18 17H20V11H23L19 7L15 11H18V17M9 3.09V9H14C14 6.04 11.83 3.57 9 3.09M2 15C2 18.3 4.7 21 8 21S14 18.3 14 15V11H2V15Z" /></svg>
 </svg>
-<svg id="mdi:mouse-move-vertical">
-<svg xmlns="http://www.w3.org/2000/svg" id="mdi-mouse-move-vertical" viewBox="0 0 24 24"><path d="M20 6H23L19 2L15 6H18V18H15L19 22L23 18H20V6M9 3.09C11.83 3.57 14 6.04 14 9H9V3.09M14 11V15C14 18.3 11.3 21 8 21S2 18.3 2 15V11H14M7 9H2C2 6.04 4.17 3.57 7 3.09V9Z" /></svg>
-</svg>
 <svg id="mdi:play-pause">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-play-pause" viewBox="0 0 24 24"><path d="M3,5V19L11,12M13,19H16V5H13M18,5V19H21V5" /></svg>
 </svg>
@@ -1089,11 +1086,15 @@ path.combo {
 </g>
 <g transform="translate(360, 60)" class="key keypos-4">
 <rect rx="4" ry="4" x="-38" y="-38" width="76" height="76" class="key"/>
-<use href="#mdi:mouse-move-vertical" xlink:href="#mdi:mouse-move-vertical" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:mouse-move-vertical"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-5.0em" style="font-size: 60%">&amp;msc</tspan><tspan x="0" dy="10.0em" style="font-size: 60%">SCROLL_Y(100)</tspan>
+</text>
 </g>
 <g transform="translate(680, 60)" class="key keypos-5">
 <rect rx="4" ry="4" x="-38" y="-38" width="76" height="76" class="key"/>
-<use href="#mdi:mouse-move-vertical" xlink:href="#mdi:mouse-move-vertical" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:mouse-move-vertical"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-5.0em" style="font-size: 60%">&amp;msc</tspan><tspan x="0" dy="10.0em" style="font-size: 60%">SCROLL_Y(100)</tspan>
+</text>
 </g>
 <g transform="translate(760, 50)" class="key trans keypos-6">
 <rect rx="4" ry="4" x="-38" y="-38" width="76" height="76" class="key trans"/>
@@ -1169,11 +1170,15 @@ path.combo {
 </g>
 <g transform="translate(360, 220)" class="key keypos-24">
 <rect rx="4" ry="4" x="-38" y="-38" width="76" height="76" class="key"/>
-<use href="#mdi:mouse-move-vertical" xlink:href="#mdi:mouse-move-vertical" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:mouse-move-vertical"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-5.0em" style="font-size: 60%">&amp;msc</tspan><tspan x="0" dy="10.0em" style="font-size: 60%">SCROLL_Y(-100)</tspan>
+</text>
 </g>
 <g transform="translate(680, 220)" class="key keypos-25">
 <rect rx="4" ry="4" x="-38" y="-38" width="76" height="76" class="key"/>
-<use href="#mdi:mouse-move-vertical" xlink:href="#mdi:mouse-move-vertical" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:mouse-move-vertical"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-5.0em" style="font-size: 60%">&amp;msc</tspan><tspan x="0" dy="10.0em" style="font-size: 60%">SCROLL_Y(-100)</tspan>
+</text>
 </g>
 <g transform="translate(760, 210)" class="key trans keypos-26">
 <rect rx="4" ry="4" x="-38" y="-38" width="76" height="76" class="key trans"/>
