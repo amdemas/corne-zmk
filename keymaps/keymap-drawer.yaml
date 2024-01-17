@@ -8,7 +8,7 @@ draw_config:
   key_ry: 4
 
   # key labels line spacing for multi-line labels
-  line_spacing: 1
+  line_spacing: 10
 
   # combo box dimensions
   combo_w: 36
@@ -306,7 +306,7 @@ draw_config:
     }
     .combo.hold {
         font-size: 16px;
-        /* translate: 2px 0px; */
+        translate: 2px 0px;
     }
 
     /*
@@ -350,6 +350,9 @@ draw_config:
       translate: -25px 25px;
     }
     .hold.mdi\:bluetooth {
+      translate: 25px -25px;
+    }
+    .hold.mdi\:monitor-screenshot {
       translate: 25px -25px;
     }
 
@@ -715,3 +718,5 @@ parse_config:
     combo_pscreen:
       key:
         tap: $$mdi:monitor-screenshot$$
+      a: top
+      o: "+0.25"

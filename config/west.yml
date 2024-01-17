@@ -2,12 +2,12 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: brinx
-      url-base: https://github.com/birnx
+    - name: urob
+      url-base: https://github.com/urob
   projects:
-    - name: ume-config
-      remote: birnx
-      revision: main
+    - name: zmk
+      remote: urob
+      revision: main-with-native-mouse
       import: app/west.yml
   self:
     path: config
