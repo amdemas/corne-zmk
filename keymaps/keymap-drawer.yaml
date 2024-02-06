@@ -476,10 +476,10 @@ parse_config:
     "&mmv MOVE_DOWN": $$mdi:mouse-move-down$$
     "&mmv MOVE_LEFT": $$mdi:mouse$$
     "&mmv MOVE_RIGHT": $$mdi:mouse$$
-    "&mwh SCROLL_UP": $$mdi:mouse-move-vertical$$
-    "&mwh SCROLL_DOWN": $$mdi:mouse-move-vertical$$
-    "&mwh SCROLL_LEFT": $$mdi:mouse$$
-    "&mwh SCROLL_RIGHT": $$mdi:mouse$$
+    "&msc SCROLL_UP": $$mdi:mouse-move-vertical$$
+    "&msc SCROLL_DOWN": $$mdi:mouse-move-vertical$$
+    "&msc SCROLL_LEFT": $$mdi:mouse$$
+    "&msc SCROLL_RIGHT": $$mdi:mouse$$
 
   # ZMK
   zmk_keycode_map:
