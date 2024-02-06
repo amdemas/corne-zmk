@@ -57,7 +57,7 @@ layers:
   - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-up-bold$$
   - $$mdi:arrow-right-bold$$
-  - $$mdi:emoticon-outline$$
+  - $$mdi:backspace-reverse-outline$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:dock-left$$
@@ -94,7 +94,7 @@ layers:
   - $$mdi:arrow-expand-down$$
   - $$mdi:arrow-expand-up$$
   - $$mdi:arrow-bottom-right$$
-  - {t: '$$mdi:backspace$$', s: '$$mdi:backspace-reverse-outline$$', type: backspace}
+  - $$mdi:backspace-reverse-outline$$
   - {t: \, s: '|'}
   - <
   - '{'
