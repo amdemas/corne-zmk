@@ -503,8 +503,8 @@ path.combo {
     --color--key--border: var(--color--material--teal--100);
 }
 </style>
-<g transform="translate(30, 0)" class="layer-default">
-<text x="0" y="28" class="label">default</text>
+<g transform="translate(30, 0)" class="layer-BASE">
+<text x="0" y="28" class="label">BASE</text>
 <g transform="translate(0, 77)">
 <g transform="translate(40, 70)" class="key keypos-0">
 <rect rx="4" ry="4" x="-38" y="-38" width="76" height="76" class="key"/>
@@ -647,12 +647,12 @@ path.combo {
 <g transform="translate(422, 320) rotate(30.0)" class="key keypos-32">
 <rect rx="4" ry="4" x="-38" y="-58" width="76" height="116" class="key"/>
 <use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:keyboard-return"/>
-<text x="0" y="56" class="key hold">lower</text>
+<text x="0" y="56" class="key hold">LOWER</text>
 </g>
 <g transform="translate(618, 320) rotate(-30.0)" class="key keypos-33">
 <rect rx="4" ry="4" x="-38" y="-58" width="76" height="116" class="key"/>
 <use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:keyboard-space"/>
-<text x="0" y="56" class="key hold">raise</text>
+<text x="0" y="56" class="key hold">RAISE</text>
 </g>
 <g transform="translate(712, 304) rotate(-15.0)" class="key keypos-34">
 <rect rx="4" ry="4" x="-38" y="-38" width="76" height="76" class="key"/>
@@ -747,8 +747,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(30, 469)" class="layer-lower">
-<text x="0" y="28" class="label">lower</text>
+<g transform="translate(30, 469)" class="layer-LOWER">
+<text x="0" y="28" class="label">LOWER</text>
 <g transform="translate(0, 56)">
 <g transform="translate(40, 70)" class="key keypos-0">
 <rect rx="4" ry="4" x="-38" y="-38" width="76" height="76" class="key"/>
@@ -909,8 +909,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(30, 918)" class="layer-raise">
-<text x="0" y="28" class="label">raise</text>
+<g transform="translate(30, 918)" class="layer-RAISE">
+<text x="0" y="28" class="label">RAISE</text>
 <g transform="translate(0, 56)">
 <g transform="translate(40, 70)" class="key keypos-0">
 <rect rx="4" ry="4" x="-38" y="-38" width="76" height="76" class="key"/>
@@ -1068,8 +1068,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(30, 1366)" class="layer-mouse">
-<text x="0" y="28" class="label">mouse</text>
+<g transform="translate(30, 1366)" class="layer-MOUSE">
+<text x="0" y="28" class="label">MOUSE</text>
 <g transform="translate(0, 56)">
 <g transform="translate(40, 70)" class="key trans keypos-0">
 <rect rx="4" ry="4" x="-38" y="-38" width="76" height="76" class="key trans"/>
@@ -1193,7 +1193,7 @@ path.combo {
 </g>
 <g transform="translate(240, 293)" class="key keypos-30">
 <rect rx="4" ry="4" x="-38" y="-38" width="76" height="76" class="key"/>
-<text x="0" y="0" class="key tap"><tspan style="font-size: 71%">default</tspan></text>
+<text x="0" y="0" class="key tap">BASE</text>
 <text x="0" y="36" class="key hold"><tspan style="font-size: 83%">toggle</tspan></text>
 </g>
 <g transform="translate(328, 304) rotate(15.0)" class="key keypos-31">
@@ -1218,8 +1218,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(30, 1814)" class="layer-adjust">
-<text x="0" y="28" class="label">adjust</text>
+<g transform="translate(30, 1814)" class="layer-ADJUST">
+<text x="0" y="28" class="label">ADJUST</text>
 <g transform="translate(0, 56)">
 <g transform="translate(40, 70)" class="key keypos-0">
 <rect rx="4" ry="4" x="-38" y="-38" width="76" height="76" class="key"/>
