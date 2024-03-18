@@ -82,17 +82,17 @@
             display-name = "MOUSE";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //|          |          |          |          |          |   |          |          |          |          |          |
-            &trans     &trans     &trans     &trans     &trans         &trans    &trans     &trans     &trans     &trans
+        //|          |          |          |          | WHL UP   |   | WHL UP   |          |          |          |          |
+            &trans     &trans     &trans     &trans     U_WH_L         U_WH_L    &trans     &trans     &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //|          | Ms Left  | MS Down  | MS Up    | MS Right |   | Ms Left  | MS Down  | MS Up    | MS Right |          |
             &trans     U_MS_L     U_MS_D     U_MS_U     U_MS_R         U_MS_L     U_MS_D     U_MS_U     U_MS_R    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //|          |          |          |          |          |   |          |          |          |          |          |
-            &trans     &trans     &trans     &trans     &trans         &trans     &trans     &trans     &trans     &trans
+        //|          |          |          |          | WHL DWN  |   | WHL DWN  |          |          |          |          |
+            &trans     &trans     &trans     &trans     U_WH_D         U_WH_D     &trans     &trans     &trans     &trans
         //╰──────────┴──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┴──────────╯
-        //                      | Default  |          |          |   |          |          |          |
-                                &to DEFAULT  &trans     &trans         &trans     &trans     &trans
+        //                      | Default  |  L Click |  R Click |   |  L Click |  R Click |          |
+                                &to DEFAULT  &mkp LCLK  &mkp RCLK     &mkp LCLK  &mkp RCLK  &trans
         //                      ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
             >;
 
