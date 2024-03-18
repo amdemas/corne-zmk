@@ -1,0 +1,27 @@
+// Define custom macros
+
+/ {
+    macros {
+        // Emoji
+        emoji: emoji {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LCTRL>, <&macro_tap &kp DOT>;
+        };
+        spot: spot {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LGUI>, <&macro_tap &kp SPACE>, <&macro_release &kp LGUI>;
+        };
+        wrk_left: wrk_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LCTRL>, <&macro_press &kp LGUI>, <&macro_tap &kp LEFT>, <&macro_release &kp LGUI>, <&macro_release &kp LCTRL>;
+        };
+        wrk_right: wrk_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LCTRL>, <&macro_press &kp LGUI>, <&macro_tap &kp RIGHT>, <&macro_release &kp LGUI>, <&macro_release &kp LCTRL>;
+        };
+    };
+};

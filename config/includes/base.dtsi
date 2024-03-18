@@ -1,0 +1,16 @@
+// Layer Definitions
+#define DEFAULT 0
+#define LOWER 1
+#define RAISE 2
+#define MOUSE 3
+#define ADJUST 4
+
+#define LWR_RET &lt LOWER RET
+#define RSE_SPC &lt RAISE SPACE
+#define VOLDN C_VOL_DN
+#define VOLUP C_VOL_UP
+#define MPLAY C_PP
+#define MNEXT C_NEXT
+#define MPREV C_PREV
+
+// Table Flip \u0028\u251b\u0ca0\u005f\u0ca0\u0029\u251b\u5f61\u253b\u2501\u253b

@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "zmk-config"
+version = "0.1.0"
+description = ""
+authors = ["amdemas <nothank@you.ha>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+west = "^0.8.0"
+keymap-drawer = "^0.12.1"
+
+
+[tool.poetry.group.dev.dependencies]
+poethepoet = "^0.24.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+tool.poe.shell_interpreter = "bash"
+
+[tool.poe.tasks.gen-keymap-image]
+shell = """
+    keymap -c keymaps/keymap-drawer.yaml parse -c 10 -z config/corne.keymap > keymaps/corne.yaml &&
+    keymap -c keymaps/keymap-drawer.yaml draw -k crkbd/rev1 -l LAYOUT_split_3x5_3 keymaps/corne.yaml > keymaps/corne.svg
+"""

@@ -1,0 +1,48 @@
+#define KEYS_L 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24
+#define KEYS_R 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29
+#define KEYS_T 30 31 32 33 34 35
+
+#define HM_TAPPING_TERM 300
+#define HM_TAPPING_TERM_FAST 200
+
+/ {
+    behaviors {
+        hml: homerow_mods_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>,  <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HM_TAPPING_TERM>;
+            quick-tap-ms = <QUICK_TAP_MS>;       // repeat on tap-into-hold
+            hold-trigger-key-positions = <KEYS_R KEYS_T>;
+            hold-trigger-on-release;
+        };
+
+        hmr: homerow_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HM_TAPPING_TERM>;
+            quick_tap_ms = <QUICK_TAP_MS>;
+            hold-trigger-key-positions = <KEYS_L KEYS_T>;
+            hold-trigger-on-release;
+        };
+
+        bkspc_del: tap_dance_bs_del {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <HM_TAPPING_TERM_FAST>;
+            bindings = <&kp BSPC>, <&kp DEL>;
+        };
+
+        semi_apos: tap_dance_semi_apos {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <HM_TAPPING_TERM_FAST>;
+            bindings = <&kp SEMI>, <&kp APOS>;
+        };
+    };
+};

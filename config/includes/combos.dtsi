@@ -1,0 +1,49 @@
+/* Copied (modified) from https://github.com/caksoylar/zmk-config */
+#define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, TERM) \
+  combo_##NAME { \
+    timeout-ms = <TERM>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    layers = <LAYERS>; \
+  };
+
+
+#define COMBO_TERM_FAST 35
+#define COMBO_TERM_SLOW 40
+#define COMBO_GLOBAL_QUICKTAP 85
+
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        /*
+        KEY POSITIONS
+        ╭────────────────────╮  ╭────────────────────╮
+        │ 0   1   2   3   4  │  │ 5   6   7   8   9  │
+        │ 10  11  12  13  14 │  │ 15  16  17  18  19 │
+        │ 20  21  22  23  24 │  │ 25  26  27  28  29 │
+        ╰───────╮ 30  31  32 │  │ 33  34  35 ╭───────╯
+                ╰────────────╯  ╰────────────╯
+        */
+
+        COMBO(tab, &kp TAB, 0 1, DEFAULT, COMBO_TERM_FAST)
+        COMBO(escape, &kp ESC, 10 11, DEFAULT, COMBO_TERM_FAST)
+        COMBO(bspc, &kp BSPC, 8 9, DEFAULT LOWER RAISE, COMBO_TERM_FAST)
+        COMBO(apos, &kp APOS, 18 19, DEFAULT, COMBO_TERM_FAST)
+        COMBO(grave, &kp GRAVE, 28 29, DEFAULT, COMBO_TERM_FAST)
+        COMBO(mouse, &to MOUSE, 31 32, DEFAULT, COMBO_TERM_SLOW)
+        COMBO(lbrc, &kp LBRC, 3 4, DEFAULT, COMBO_TERM_SLOW)
+        COMBO(rbrc, &kp RBRC, 5 6, DEFAULT, COMBO_TERM_SLOW)
+        COMBO(lpar, &kp LPAR, 13 14, DEFAULT, COMBO_TERM_SLOW)
+        COMBO(rpar, &kp RPAR, 15 16, DEFAULT, COMBO_TERM_SLOW)
+        COMBO(lbkt, &kp LBKT, 23 24, DEFAULT, COMBO_TERM_SLOW)
+        COMBO(rbkt, &kp RBKT, 25 26, DEFAULT, COMBO_TERM_SLOW)
+        COMBO(caps, &kp CAPS, 4 5, DEFAULT, COMBO_TERM_SLOW)
+        COMBO(bslh, &kp BSLH, 20 21, DEFAULT, COMBO_TERM_SLOW)
+        COMBO(lt, &kp LT, 14 15, DEFAULT, COMBO_TERM_SLOW)
+        COMBO(gt, &kp GT, 24 25, DEFAULT, COMBO_TERM_SLOW)
+        COMBO(spot, &spot, 11 12, DEFAULT, COMBO_TERM_SLOW)
+        COMBO(pscreen, &kp PSCRN, 7 8 9, DEFAULT, COMBO_TERM_SLOW)
+    };
+};
