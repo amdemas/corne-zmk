@@ -469,17 +469,17 @@ parse_config:
       tap: $$mdi:cog-clockwise$$
 
     # Mouse
-    "&mkp MB1": $$mdi:gesture-tap-button$$
-    "&mkp MB2": $$mdi:cursor-default-click$$
+    "&mkp LCLK": $$mdi:gesture-tap-button$$
+    "&mkp RCLK": $$mdi:cursor-default-click$$
     "&mkp MB3": $$mdi:drag-variant$$
     "&mmv MOVE_UP": $$mdi:mouse-move-up$$
     "&mmv MOVE_DOWN": $$mdi:mouse-move-down$$
     "&mmv MOVE_LEFT": $$mdi:mouse$$
     "&mmv MOVE_RIGHT": $$mdi:mouse$$
-    "&msc SCROLL_UP": $$mdi:mouse-move-vertical$$
-    "&msc SCROLL_DOWN": $$mdi:mouse-move-vertical$$
-    "&msc SCROLL_LEFT": $$mdi:mouse$$
-    "&msc SCROLL_RIGHT": $$mdi:mouse$$
+    "&msc SCRL_UP": $$mdi:mouse-move-vertical$$
+    "&msc SCRL_DOWN": $$mdi:mouse-move-vertical$$
+    "&msc SCRL_LEFT": $$mdi:mouse$$
+    "&msc SCRL_RIGHT": $$mdi:mouse$$
 
   # ZMK
   zmk_keycode_map:
