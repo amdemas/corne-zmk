@@ -116,8 +116,8 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:mouse-move-vertical$$
-  - $$mdi:mouse-move-vertical$$
+  - '&msc SCRL_UP'
+  - '&msc SCRL_UP'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -136,18 +136,13 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:mouse-move-vertical$$
-  - $$mdi:mouse-move-vertical$$
+  - '&msc SCRL_DOWN'
+  - '&msc SCRL_DOWN'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: BASE, h: toggle}
-  - $$mdi:gesture-tap-button$$
-  - $$mdi:cursor-default-click$$
-  - $$mdi:cursor-default-click$$
-  - $$mdi:gesture-tap-button$$
-  - $$mdi:drag-variant$$
+  - '&to 0 U_BTN1 U_BTN2 U_BTN2 U_BTN1 U_BTN3'
   ADJUST:
   - F1
   - F2
