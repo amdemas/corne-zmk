@@ -66,11 +66,17 @@
 <svg id="mdi:content-save-plus-outline">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-content-save-plus-outline" viewBox="0 0 24 24"><path d="M5 3C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H12.81C12.45 20.38 12.2 19.7 12.08 19H5V5H16.17L19 7.83V12.08C19.7 12.2 20.38 12.45 21 12.81V7L17 3H5M6 6V10H15V6H6M12 12C10.34 12 9 13.34 9 15S10.34 18 12 18C12 16.11 12.89 14.34 14.39 13.21C13.85 12.5 13 12 12 12M17 14V17H14V19H17V22H19V19H22V17H19V14H17Z" /></svg>
 </svg>
+<svg id="mdi:cursor-default-click">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-cursor-default-click" viewBox="0 0 24 24"><path d="M10.76,8.69A0.76,0.76 0 0,0 10,9.45V20.9C10,21.32 10.34,21.66 10.76,21.66C10.95,21.66 11.11,21.6 11.24,21.5L13.15,19.95L14.81,23.57C14.94,23.84 15.21,24 15.5,24C15.61,24 15.72,24 15.83,23.92L18.59,22.64C18.97,22.46 19.15,22 18.95,21.63L17.28,18L19.69,17.55C19.85,17.5 20,17.43 20.12,17.29C20.39,16.97 20.35,16.5 20,16.21L11.26,8.86L11.25,8.87C11.12,8.76 10.95,8.69 10.76,8.69M15,10V8H20V10H15M13.83,4.76L16.66,1.93L18.07,3.34L15.24,6.17L13.83,4.76M10,0H12V5H10V0M3.93,14.66L6.76,11.83L8.17,13.24L5.34,16.07L3.93,14.66M3.93,3.34L5.34,1.93L8.17,4.76L6.76,6.17L3.93,3.34M7,10H2V8H7V10" /></svg>
+</svg>
 <svg id="mdi:dock-left">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-dock-left" viewBox="0 0 24 24"><path d="M20 4H4A2 2 0 0 0 2 6V18A2 2 0 0 0 4 20H20A2 2 0 0 0 22 18V6A2 2 0 0 0 20 4M20 18H9V6H20Z" /></svg>
 </svg>
 <svg id="mdi:dock-right">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-dock-right" viewBox="0 0 24 24"><path d="M20 4H4A2 2 0 0 0 2 6V18A2 2 0 0 0 4 20H20A2 2 0 0 0 22 18V6A2 2 0 0 0 20 4M15 18H4V6H15Z" /></svg>
+</svg>
+<svg id="mdi:gesture-tap-button">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-gesture-tap-button" viewBox="0 0 24 24"><path d="M13 5C15.21 5 17 6.79 17 9C17 10.5 16.2 11.77 15 12.46V11.24C15.61 10.69 16 9.89 16 9C16 7.34 14.66 6 13 6S10 7.34 10 9C10 9.89 10.39 10.69 11 11.24V12.46C9.8 11.77 9 10.5 9 9C9 6.79 10.79 5 13 5M20 20.5C19.97 21.32 19.32 21.97 18.5 22H13C12.62 22 12.26 21.85 12 21.57L8 17.37L8.74 16.6C8.93 16.39 9.2 16.28 9.5 16.28H9.7L12 18V9C12 8.45 12.45 8 13 8S14 8.45 14 9V13.47L15.21 13.6L19.15 15.79C19.68 16.03 20 16.56 20 17.14V20.5M20 2H4C2.9 2 2 2.9 2 4V12C2 13.11 2.9 14 4 14H8V12L4 12L4 4H20L20 12H18V14H20V13.96L20.04 14C21.13 14 22 13.09 22 12V4C22 2.9 21.11 2 20 2Z" /></svg>
 </svg>
 <svg id="mdi:home-outline">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-home-outline" viewBox="0 0 24 24"><path d="M12 5.69L17 10.19V18H15V12H9V18H7V10.19L12 5.69M12 3L2 12H5V20H11V14H13V20H19V12H22" /></svg>
@@ -101,6 +107,9 @@
 </svg>
 <svg id="mdi:mouse-move-up">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-mouse-move-up" viewBox="0 0 24 24"><path d="M7 9H2C2 6.04 4.17 3.57 7 3.09V9M18 17H20V11H23L19 7L15 11H18V17M9 3.09V9H14C14 6.04 11.83 3.57 9 3.09M2 15C2 18.3 4.7 21 8 21S14 18.3 14 15V11H2V15Z" /></svg>
+</svg>
+<svg id="mdi:mouse-move-vertical">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-mouse-move-vertical" viewBox="0 0 24 24"><path d="M20 6H23L19 2L15 6H18V18H15L19 22L23 18H20V6M9 3.09C11.83 3.57 14 6.04 14 9H9V3.09M14 11V15C14 18.3 11.3 21 8 21S2 18.3 2 15V11H14M7 9H2C2 6.04 4.17 3.57 7 3.09V9Z" /></svg>
 </svg>
 <svg id="mdi:play-pause">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-play-pause" viewBox="0 0 24 24"><path d="M3,5V19L11,12M13,19H16V5H13M18,5V19H21V5" /></svg>
@@ -1073,15 +1082,11 @@ path.combo {
 </g>
 <g transform="translate(360, 60)" class="key keypos-4">
 <rect rx="4" ry="4" x="-38" y="-38" width="76" height="76" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-5.0em" style="font-size: 60%">&amp;msc</tspan><tspan x="0" dy="10.0em" style="font-size: 60%">SCRL_LEFT</tspan>
-</text>
+<use href="#mdi:mouse" xlink:href="#mdi:mouse" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:mouse"/>
 </g>
 <g transform="translate(680, 60)" class="key keypos-5">
 <rect rx="4" ry="4" x="-38" y="-38" width="76" height="76" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-5.0em" style="font-size: 60%">&amp;msc</tspan><tspan x="0" dy="10.0em" style="font-size: 60%">SCRL_LEFT</tspan>
-</text>
+<use href="#mdi:mouse" xlink:href="#mdi:mouse" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:mouse"/>
 </g>
 <g transform="translate(760, 50)" class="key trans keypos-6">
 <rect rx="4" ry="4" x="-38" y="-38" width="76" height="76" class="key trans"/>
@@ -1157,15 +1162,11 @@ path.combo {
 </g>
 <g transform="translate(360, 220)" class="key keypos-24">
 <rect rx="4" ry="4" x="-38" y="-38" width="76" height="76" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-5.0em" style="font-size: 60%">&amp;msc</tspan><tspan x="0" dy="10.0em" style="font-size: 60%">SCRL_DOWN</tspan>
-</text>
+<use href="#mdi:mouse-move-vertical" xlink:href="#mdi:mouse-move-vertical" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:mouse-move-vertical"/>
 </g>
 <g transform="translate(680, 220)" class="key keypos-25">
 <rect rx="4" ry="4" x="-38" y="-38" width="76" height="76" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-5.0em" style="font-size: 60%">&amp;msc</tspan><tspan x="0" dy="10.0em" style="font-size: 60%">SCRL_DOWN</tspan>
-</text>
+<use href="#mdi:mouse-move-vertical" xlink:href="#mdi:mouse-move-vertical" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:mouse-move-vertical"/>
 </g>
 <g transform="translate(760, 210)" class="key trans keypos-26">
 <rect rx="4" ry="4" x="-38" y="-38" width="76" height="76" class="key trans"/>
@@ -1190,27 +1191,19 @@ path.combo {
 </g>
 <g transform="translate(328, 304) rotate(15.0)" class="key keypos-31">
 <rect rx="4" ry="4" x="-38" y="-38" width="76" height="76" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-5.0em">&amp;mkp</tspan><tspan x="0" dy="10.0em">LCLK</tspan>
-</text>
+<use href="#mdi:gesture-tap-button" xlink:href="#mdi:gesture-tap-button" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:gesture-tap-button"/>
 </g>
 <g transform="translate(422, 320) rotate(30.0)" class="key keypos-32">
 <rect rx="4" ry="4" x="-38" y="-58" width="76" height="116" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-5.0em">&amp;mkp</tspan><tspan x="0" dy="10.0em">RCLK</tspan>
-</text>
+<use href="#mdi:cursor-default-click" xlink:href="#mdi:cursor-default-click" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:cursor-default-click"/>
 </g>
 <g transform="translate(618, 320) rotate(-30.0)" class="key keypos-33">
 <rect rx="4" ry="4" x="-38" y="-58" width="76" height="116" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-5.0em">&amp;mkp</tspan><tspan x="0" dy="10.0em">LCLK</tspan>
-</text>
+<use href="#mdi:gesture-tap-button" xlink:href="#mdi:gesture-tap-button" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:gesture-tap-button"/>
 </g>
 <g transform="translate(712, 304) rotate(-15.0)" class="key keypos-34">
 <rect rx="4" ry="4" x="-38" y="-38" width="76" height="76" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-5.0em">&amp;mkp</tspan><tspan x="0" dy="10.0em">RCLK</tspan>
-</text>
+<use href="#mdi:cursor-default-click" xlink:href="#mdi:cursor-default-click" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:cursor-default-click"/>
 </g>
 <g transform="translate(800, 293)" class="key trans keypos-35">
 <rect rx="4" ry="4" x="-38" y="-38" width="76" height="76" class="key trans"/>
